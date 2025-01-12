@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addon id="repository.lusd" name="LUSD REPO" version="1.1.0" provider-name="sweetkitten27">
+    <extension point="xbmc.addon.repository" name="LUSD KODI REPOSITORY">
+        <dir>
+            <info compressed="false">https://sweetkitten27.github.io/repo/zips/addons.xml</info>
+            <checksum>https://sweetkitten27.github.io/repo/zips/addons.xml.md5</checksum>
+            <datadir zip="true">https://sweetkitten27.github.io/repo/zips/</datadir>
+        </dir>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+        <summary>LUSD KODI REPOSITORY</summary>
+        <description>LUSD's Repository For Kodi</description>
+        <disclaimer></disclaimer>
+        <platform>all</platform>
+        <assets>
+            <icon>icon.png</icon>
+            <fanart>fanart.jpg</fanart>
+        </assets>
+    </extension>
+</addon>
