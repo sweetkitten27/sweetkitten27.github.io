@@ -1,616 +1,92 @@
 <?xml version='1.0' encoding='utf-8'?>
-<addons><addon id="plugin.program.iptv.merge" name="IPTV Merge" provider-name="SlyGuy" version="0.27.9">
-  <requires>
-    <import addon="script.module.slyguy" version="0.85.37" />
-  </requires>
-  <extension point="xbmc.python.pluginsource" library="default.py">
-    <provides>executable</provides>
-  </extension>
-  <extension point="xbmc.service" library="service.py" start="login" />
-  <extension point="xbmc.addon.metadata">
-    <description lang="en">Easily merge multiple IPTV playlists &amp; EPGs from remote, local or supported add-on sources.</description>
-    <reuselanguageinvoker>true</reuselanguageinvoker>
-    <license />
-    <language />
-    <website />
-    <news>Support plugin method returning url/path</news>
-    <assets>
-      <icon>icon.png</icon>
-      <fanart>fanart.jpg</fanart>
-    </assets>
-  </extension>
-</addon><addon id="plugin.program.openwizard" name="[COLOR limegreen]Open[/COLOR]Wizard" version="2.0.8" provider-name="drinfernoo, slamious">
-    <requires>
-        <import addon="xbmc.python" version="3.0.0" />
-        <import addon="script.module.requests" />
-        <import addon="script.module.six" />
-        <import addon="script.kodi.android.update" optional="true" version="1.1.7" />
-        <import addon="script.speedtester" optional="true" version="1.1.2" />
-    </requires>
-    
-    <extension point="xbmc.python.pluginsource" library="default.py">
-        <provides>executable</provides>
-    </extension>
-    
-    <extension point="xbmc.service" library="startup.py" start="startup" />
-    
-    <extension point="xbmc.addon.metadata">
-        <summary lang="en">[COLOR limegreen]Open[/COLOR]Wizard</summary>
-        <description lang="en">[COLOR limegreen]Open[/COLOR]Wizard offers many maintenance features, selective add-on data saving, and automated build installs.</description>
-        <platform>all</platform>
-        <reuselanguageinvoker>false</reuselanguageinvoker>
-        <source>https://www.github.com/a4k-openproject/plugin.program.openwizard/</source>
-        <news>
-2.0.7
- - Fix Error when using default log settings
-2.0.6
- - Fix regex for formatting tags
- - Fix theme selection after build install
- - Fix downloading into invalid path
-2.0.5
- - Add Enable All Add-ons after Build Install
-2.0.4
- - Fix leftover broken dialogs
-2.0.3
- - Don't show previous version builds in Matrix
-2.0.2
- - Replace remaining occurences of LOGNOTICE
-2.0.1
- - Add attribution to @slamious
-2.0.0
- - Initial Matrix support
-1.4.5
- - Fix bugs with unintended files being cleared`
-1.4.4
- - Transfer ownership
-1.4.3
- - Fix missing artwork on items (thanks @xulek)
-1.4.2
- - A few bug fixes
-1.4.1
- - Fix crash on fresh installs
-1.4.0
- - Fix APK Installer
- - Convert official APK downloader to use official script
- - Add scrollbar to Save Data dialog
- - Fix skin path in build info
-1.3.7
- - Fix import lock error
-1.3.6
- - Fix notifications
- - Cleanup log files
-1.3.5
- - Add Fen
- - Add Shadow
- - Fix restoring saved data every boot
-1.3.4
- - Fix bad indent
-1.3.3
- - Fix Unicode characters in notification window
-1.3.2
- - Fix build restore
-1.3.1
- - Fix "Keep Login Info" menu        
-1.3.0
- - Fix formatting of saved restore times
- - Fix local build zip being deleted on restore
- - Add YouTube API saving
- - Remove broken context menus
- - Fix repeating dialogs from shortcuts/favorites
- - Remove "Normal Install" option
- - Add "Logging Tools" menu
- - Add option to save guisettings.xml
- - Add TMDbHelper Fanart.tv saving
- - More fixes for OS X
- - Fix Seren Fanart.tv saving
-1.2.9
- - Fix NuMb3r5 cache clearing
- - Fix hang during repo force check
- - Fix logins being restored every startup
- - Fix some file permission errors
- - Fix OS X backup errors
-1.2.8
- - Add Gaia PM OAuth
- - Fix binary add-on restoration
- - Fix some issues with old settings
- - Fix timing on many startup tasks
-1.2.7
- - Add TheMovieDb Helper
-1.2.6
- - Fix Seren PM OAuth    
-1.2.5
- - Fix typo in debridit.py
-1.2.4
- - Cover more edge cases during binary detection
-1.2.3
- - Fix notification ID bug
-1.2.2
- - Add Seren PM OAuth
- - Add AllDebrid spport for Gaia, Seren, ResolveURL, and URLResolver
-1.2.1
- - General bug fixes
-1.2.0
- - Silence save data notifications on startup
- - Fix Addon Installer menu
- - Convert addons.txt to JSON format
-1.1.1
- - Fix error on advancedsettings categories
-1.1.0
- - Add back advancedsettings area under System Tweaks/Fixes
- - Rudimentary version of advancedsettings editor. Can currently only handle editing pre-existing tags under 'cache' and 'network'.
- - Convert advanced.txt to JSON format
- - Add "built-in" advancedsettings.xml presets
-1.0.3
- - Update artwork
- - Fix rare issues with URLs not working
- - Fix repetitive build prompt (again)
- - Fix builds downloading twice
- - Fix title coloring on notifications
- - Fix auto repo install
- - Fix first run settings not being respected
-1.0.2
- - Fix crash in login menu
- - Fix auto install repo
-1.0.1
- - Fix double startup
- - Fix repetitive build prompt
- - Fix main menu not opening on Krypton
- - Fix notification timeout
- - Fix crash in Trakt menu
-1.0.0
- - Initial Commit
-        </news>
-        <assets>
-            <icon>icon.png</icon>
-            <fanart>fanart.png</fanart>
-        </assets>
-    </extension>
-</addon><addon id="plugin.program.super.favourites" name="Super Favourites" version="420.2.3.7" provider-name="jmooremcc, spoyser">
-  <requires>
-    <import addon="xbmc.python" version="3.0.0" />
-  </requires>
-
-
-  <extension point="xbmc.python.pluginsource" library="default.py">
-        <provides>video audio image executable</provides>
-  </extension>
-
-  
-  <extension point="xbmc.service" library="service.py" start="startup" />
-
-  
-  <extension point="xbmc.addon.metadata">
-    <summary lang="en_GB">Put all your favourites bits of all your favourites addons into one easy to use addon.</summary>
-    <summary lang="es_ES">Ponga todas sus partes favoritas de todos sus complementos favoritos en un complemento fácil de usar.</summary>
-    <description lang="en_GB">Super Favourites is a better way of managing your Kodi Favourites.[CR][CR]Virtually any menu item within Kodi can be added to Super Favourites, even from addons that don't normally provide this feature.[CR][CR]Super Favourites allows you to better manage your Kodi favourites, including the creation of sub-folders, into which your Kodi favourites can then be copied or moved into.[CR][CR]This allows you to create you own custom addon with just the best bits of your favourite addons. Search your favourite addons, play your favourite music, read your favourite comic strips, select your favourite playlists, browse your favourite movies, listen to your favourite radio stations, watch your favourite cartoons, the possibilities are endless, all from within one easy to use addon.</description>
-    <description lang="es_ES">Super Favoritos es la mejor forma de administrar sus favoritos de Kodi.[CR][CR]Prácticamente cualquier elemento de menú dentro de Kodi se puede agregar a Súper favoritos, incluso desde complementos que normalmente no brindan esta función.[CR][CR]Super Favoritos le permite administrar mejor sus favoritos de Kodi, incluída la creación de subcarpetas, en las que puede copiar o mover sus secciones o addons preferidos.[CR][CR]Esto le permite crear su propio complemento personalizado con lo mejor. Busque sus addons preferidos, reproduzca su música favorita, lea sus historias favoritas, seleccione sus listas de reproducción, explore sus películas, escuche sus estaciones de radio, vea sus dibujos animados, las posibilidades son infinitas, todos sus favoritos desde un solo uso addon, fácil de añadir.</description>
-    <platform>all</platform>
-    <language>en es</language>
-    <license>GNU GENERAL PUBLIC LICENSE. Version 2, June 1991</license>
-    <forum>http://forum.xbmc.org/showthread.php?tid=192662</forum>
-    <website />
-    <source>https://github.com/spoyser/spoyser-repo/tree/master/plugin.program.super.favourites</source>
-    <source>https://github.com/jmooremcc/plugin.program.super.favourites</source>
-    <email>seanpoyser at gmail.com</email>
-    <email>jmooremcc at hotmail.com</email>
-    <assets>
-      <icon>icon.png</icon>
-      <fanart>fanart.jpg</fanart>
-    </assets>
-
-    <news>
-2.3.7 September 2023
-      -Fix reported glitch
-
-2.3.6 September 2023
-      -Fixed root translation bug in imagecache module
-
-2.3.5 September 2023
-      -Restored util module ROOT variable back to special path
-
-2.3.4 September 2023
-      -Modified imagecache to ignore special paths
-
-2.3.3 August 2023
-      - Added imagecache module as part of solution to implement saving icons and fanart during export/import
-      - Modified importer module to utilize imagecache
-      - Modified default module to utilize imagecache at startup
-      - Fixed miscellaneous bugs related to xbmc function calls
-
-2.3.2 July 2023
-    -Removed metahandler from addon.xml
-    -Added new imagecache module to implement the ability to import/export custom icons.
-    -Miscellaneous bug fixes
-    -Bug fixes in imagecache module
-    -Bug fix in importer module
-
-2.2.6 April 2022
-      - Fix context menu settings bug
-      - Fix more issues with activateWindowCommand
-
-2.2.5 February 2022
-      - Generic Fix for activateWindowCommand
-
-2.2.4 February 2022
-      - Fix URL Playback
-
-2.2.3 February 2022
-      - Fix folder lock
-      - Fix name colorization
-
-2.2.1 February 2022
-      - Minor Bug Fix
-
-2.2.0 December 2021
-      - Fixed Play From Here functionality
-      - Fixed handling of local folders so that back button now works correctly
-      - Added threading decorator to utils
-
-2.1.0: 9 October 2021
-      - Added Spanish Translation contributed by populc
-      - Fixed issue in player module
-
-2.0.11: 26 August 2021
-      - Fixed bug in download module that prevented videos from being downloaded
-
-2.0.10: 6 June 2021
-      - Fixed bug that prevented Hebrew language for working
-
-2.0.9: 15 May 2021
-      - Fixed bug in Player.def activateWindowCommand(cmd) that was messing up the ability
-        to return from child direrctories
-
-2.0.8: 14 May 2021
-      - Fixed various incompatibilities with latest version of Matrix involving decode('utf-8')
-        that caused crashes.
-
-2.0.7: 17 February 2021
-    - Fixed remote folder access via another plugin
-
-2.0.6: 11 January 2021
-      - Fixed access to local folders and smb folders
-
-2.0.5: 12 December 2020
-      - More Fixes for Network Folder Failure to Launch
-
-2.0.0: 29 November 2020
-      - Matrix Version
-
-1.0.60: 1 November 2020
-    - Fixed launch issues in Kodi Leia
-
-1.0.59: 29th May 2017
-    - 'Now playing' text now defined by SF due to skin variations
-    </news>
-
-  </extension>
-
-
-  <extension point="kodi.context.item">
-    <menu id="kodi.core.main">
-
-      <item library="capture.py">
-        <label>$ADDON[plugin.program.super.favourites 30002]</label>
-        <visible>String.IsEqual(Window(Home).Property(SF_STD_CONTEXTMENU_ENABLED),True) + !StringCompare(Container.PluginName,plugin.program.super.favourites)</visible>
-      </item>
-
-      <item library="menu_addtofaves.py">
-        <label>$ADDON[plugin.program.super.favourites 30047]</label>
-        <visible>String.IsEqual(Window(Home).Property(SF_STD_ADDTOFAVES_ENABLED),True) + !StringCompare(Container.PluginName,plugin.program.super.favourites)</visible>
-      </item>
-
-      <item library="menu_download.py">
-        <label>$ADDON[plugin.program.super.favourites 30259]</label>
-        <visible>String.IsEqual(Window(Home).Property(SF_STD_DOWNLOAD_ENABLED),True) + Player.IsInternetStream</visible>
-      </item>
-
-    </menu>
-  </extension>
-
-</addon><addon id="plugin.video.daddylive" name="Daddylive" version="4.19" provider-name="THE CREW">
-    <requires>
-        <import addon="xbmc.python" version="3.0.0" />
-        <import addon="script.module.requests" />
-        <import addon="script.module.inputstreamhelper" />
-        <import addon="script.module.six" />
-    </requires>
-    <extension point="xbmc.python.pluginsource" library="addon.py">
-        <provides>video</provides>
-    </extension>
-    <extension point="xbmc.addon.metadata">
-        <description lang="pl">1.2</description>
-        <disclaimer lang="pl">test
-        </disclaimer>
-        <summary lang="en">Live TV and Sports</summary>
-        <description lang="en">Live TV and Sports</description>
-        <disclaimer lang="en">test
-        </disclaimer>
-        <language>pl</language>
-        <platform>all</platform>
-        <license>GNU GENERAL PUBLIC LICENSE. Version 2, June 1991</license>
-        <website />
-        <assets>
-            <icon>icon.png</icon>
-            <fanart>fanart.jpg</fanart>
-        </assets>
-    </extension>
-</addon><addon id="plugin.video.free99" version="1.5" name="[COLOR goldenrod]Diggz Free99[/COLOR]" provider-name="JewBMX, DIGGZ">
-    <requires>
-        <import addon="script.module.six" />
-        <import addon="script.module.kodi-six" />
-        <import addon="script.module.simplejson" />
-        <import addon="script.module.requests" />
-        <import addon="script.module.resolveurl" />
-        <import addon="script.free99.artwork" />
-    </requires>
-    <extension point="xbmc.python.pluginsource" library="main.py">
-        <provides>video</provides>
-    </extension>
-    <extension library="service.py" point="xbmc.service" start="startup" />
-    <extension point="xbmc.addon.metadata">
-        <summary lang="en">Squeezing the last drop out of free scapers</summary>
-        <description lang="en">Diggz Scrubs Fork</description>
-        <disclaimer lang="en">The author is not responsible for the use of this addon. The author is not responsible for the content found using this addon. The author does not host or own any content found within this addon.[CR]The author is in no way affiliated with Kodi, Team Kodi, or the XBMC Foundation.[CR]This is a Non-profit resource, organized solely for educational purposes which is protected under the Fair-Use doctrine of the Copyright Act, Specifically section 107, which does promote freedom of expression, by permitting the unlicensed use of copyright-protected works.</disclaimer>
-        <license />
-        <platform>all</platform>
-        <assets>
-            <icon>resources/images/icon.png</icon>
-            <fanart>resources/images/fanart.jpg</fanart>
-        </assets>
-        <news />
-    </extension>
-</addon><addon id="plugin.video.madtitansports" name="Mad Titan [COLORyellow]Sports[/COLOR] V2.0" version="2.0.03" provider-name="MicroJen Community">
-  <requires>
-<import addon="xbmc.python" version="3.0.0" />
-    <import addon="script.module.requests" />
-    <import addon="script.module.routing" />
-    <import addon="script.module.unidecode" />
-    <import addon="script.module.inputstreamhelper" />
-    <import addon="script.module.resolveurl" />
-    <import addon="script.module.microjenscrapers" />
-    <import addon="script.module.tzlocal" />
-    <import addon="script.module.jetextractors" />
-    <import addon="plugin.video.jetproxy" optional="true" />
-    <import addon="inputstream.ffmpegdirect" />
-    
-    <import addon="inputstream.adaptive" />
-    <import addon="script.module.pyamf" />
-    
-    <import addon="script.module.tabulate" />    
-  </requires>
-  <extension point="xbmc.python.pluginsource" library="default.py">
-    <provides>video</provides>
-  </extension>
-  <extension point="xbmc.addon.metadata">
-    <summary lang="en_GB">Sports,Live tv,Movies,TV Shows. Thanks to The Jen Team for all the hard work.</summary>
-    <platform>all</platform>
-    <language>en</language>
-    <license>GPL-2.0-or-later</license>
-	<assets>
-		<icon>icon.png</icon>
-		<fanart>fanart.jpg</fanart>
-  </assets>
-  </extension>
-</addon><addon id="plugin.video.playlistloader" name="Playlist Loader" version="1.1.7" provider-name="Nux007, Publish3r, Silhouette2022">
-  <requires>
-    <import addon="xbmc.python" version="3.0.0" />
-    <import addon="script.module.requests" version="2.22.0" />
-    <import addon="script.module.dateutil" version="2.8.1" />
-    <import addon="inputstream.adaptive" />    
-  </requires>
-  <extension point="xbmc.python.pluginsource" library="default.py">
-    <provides>video</provides>
-  </extension>
-  <extension point="xbmc.addon.metadata">
-    <summary lang="en_GB">Playlist Loader</summary>
-    <summary lang="de_DE">Playlist Loader</summary>
-    <description lang="en_GB">Manage your various playlists in a simple way.[CR]EPG support for xmltv.[CR][CR]Note:[CR]This addon does not contain any illegal content. Should you add any illegal content, you are fully responsible for any consequences.</description>
-    <description lang="de_DE">Verwalte auf einfache Art und Weise deine verschiedenen Playlisten.[CR]Unterstützt EPG für XMLTV.[CR][CR]Hinweis:[CR]Dieses Addon enthält keine illegalen Inhalte. Solltest du irgendwelche illegalen Inhalte hinzufügen, bist du im vollen Umfang für eventuelle Folgen verantwortlich.</description>
-    <description lang="ru_RU">Дополнение для управления плейлистами.[CR][CR]Замечание:[CR]Это дополнение не содержит нелегального контента. Вы несете полную ответственность, если используете любой нелегальный контент.</description>
-    <language>en de</language>
-    <platform>all</platform>
-    <source>https://github.com/Publish3r/repository.kodi.matrix/tree/main/plugin.video.playlistloader</source>
-    <assets>
-        <icon>icon.png</icon>
-    </assets>
-  </extension>
-</addon><addon id="plugin.video.playlistloader2" name="M3u Playlists" version="438" provider-name="Nux007, Publish3r, Silhouette2022">
-  <requires>
-    <import addon="xbmc.python" version="3.0.0" />
-    <import addon="script.module.requests" version="2.22.0" />
-    <import addon="script.module.dateutil" version="2.8.1" />
-    <import addon="inputstream.adaptive" />    
-  </requires>
-  <extension point="xbmc.python.pluginsource" library="default.py">
-    <provides />
-  </extension>
-  <extension point="xbmc.addon.metadata">
-    <summary lang="en_GB">Playlist Loader</summary>
-    <summary lang="de_DE">Playlist Loader</summary>
-    <description lang="en_GB">Manage your various playlists in a simple way.[CR]EPG support for xmltv.[CR][CR]Note:[CR]This addon does not contain any illegal content. Should you add any illegal content, you are fully responsible for any consequences.</description>
-    <description lang="de_DE">Verwalte auf einfache Art und Weise deine verschiedenen Playlisten.[CR]Unterstützt EPG für XMLTV.[CR][CR]Hinweis:[CR]Dieses Addon enthält keine illegalen Inhalte. Solltest du irgendwelche illegalen Inhalte hinzufügen, bist du im vollen Umfang für eventuelle Folgen verantwortlich.</description>
-    <description lang="ru_RU">Дополнение для управления плейлистами.[CR][CR]Замечание:[CR]Это дополнение не содержит нелегального контента. Вы несете полную ответственность, если используете любой нелегальный контент.</description>
-    <language>en de</language>
-    <platform>all</platform>
-    <source>https://github.com/Publish3r/repository.kodi.matrix/tree/main/plugin.video.playlistloader2</source>
-    <assets>
-        <icon>icon.png</icon>
-    </assets>
-  </extension>
-</addon><addon id="pvr.iptvsimple" version="21.10.0" name="IPTV Simple Client" provider-name="nightik and Ross Nicholson">
-  <requires>
-<import addon="kodi.binary.global.main" minversion="2.0.0" version="2.0.2" />
-<import addon="kodi.binary.global.general" minversion="1.0.4" version="1.0.5" />
-<import addon="kodi.binary.global.filesystem" minversion="1.1.7" version="1.1.8" />
-<import addon="kodi.binary.global.network" minversion="1.0.0" version="1.0.4" />
-<import addon="kodi.binary.global.tools" minversion="1.0.0" version="1.0.4" />
-<import addon="kodi.binary.instance.pvr" minversion="8.2.0" version="8.3.0" />
-    <import addon="inputstream.ffmpegdirect" minversion="21.0.0" />
-    <import addon="inputstream.adaptive" minversion="21.0.0" />
-    <import addon="inputstream.rtmp" minversion="21.0.0" />
-  </requires>
-  <extension point="kodi.pvrclient" library_android="libpvr.iptvsimple.so" />
-  <extension point="xbmc.addon.metadata">
-    <platform>android-armv7</platform>
-    <license>GPL-2.0-or-later</license>
-    <source>https://github.com/kodi-pvr/pvr.iptvsimple</source>
-    <forum>https://forum.kodi.tv/forumdisplay.php?fid=215</forum>
-    <assets>
-      <icon>icon.png</icon>
-    </assets>
-    <summary lang="af_ZA">Kodi PVR byvoegsel vir IPTV ondersteuning. https://github.com/afedchin/Kodi-addon-iptvsimple/wiki/IPTV-Simple-Home</summary>
-    <summary lang="az_AZ">IPTV dəstəyi üçün Kodi PVR əlavəsini yükləyin.[CR]https://github.com/afedchin/Kodi-addon-iptvsimple/wiki/IPTV-Simple-Home</summary>
-    <summary lang="be_BY">PVR-дапаўненне для Kodi для падтрымкі IPTV.</summary>
-    <summary lang="bg_BG">Добавка за ПВР за поддръжка на IPTV. https://github.com/afedchin/Kodi-addon-iptvsimple/wiki/IPTV-Simple-Home</summary>
-    <summary lang="ca_ES">Complement PVR de Kodi per al suport d'IPTV.</summary>
-    <summary lang="cs_CZ">Doplněk Kodi podpory IPTV PVR.</summary>
-    <summary lang="cy_GB">Ychwanegyn recordydd Kodi ar gyfer cefnogi IPTV. https://github.com/afedchin/Kodi-addon-iptvsimple/wiki/IPTV-Simple-Home</summary>
-    <summary lang="da_DK">Kodi PVR addon til IPTV support.</summary>
-    <summary lang="de_DE">Kodi PVR-Addon für IPTV-Unterstützung.</summary>
-    <summary lang="el_GR">Πρόσθετο του Kodi για PVR, με υποστήριξη IPTV. Για λεπτομέρειες επισκεφθείτε το: https://github.com/afedchin/Kodi-addon-iptvsimple/wiki/IPTV-Simple-Home</summary>
-    <summary lang="en_AU">Kodi PVR addon for IPTV support. https://github.com/afedchin/Kodi-addon-iptvsimple/wiki/IPTV-Simple-Home</summary>
-    <summary lang="en_GB">Kodi PVR addon for IPTV support.</summary>
-    <summary lang="en_NZ">Kodi PVR addon for IPTV support. https://github.com/afedchin/Kodi-addon-iptvsimple/wiki/IPTV-Simple-Home</summary>
-    <summary lang="en_US">Kodi PVR addon for IPTV support. https://github.com/afedchin/Kodi-addon-iptvsimple/wiki/IPTV-Simple-Home</summary>
-    <summary lang="es_AR">Addon Kodi PVR para soporte IPTV. https://github.com/afedchin/Kodi-addon-iptvsimple/wiki/IPTV-Simple-Home</summary>
-    <summary lang="es_ES">Complemento Kodi PVR para compatibilidad con IPTV.</summary>
-    <summary lang="es_MX">Complemento Kodi PVR para soporte de IPTV. https://github.com/afedchin/Kodi-addon-iptvsimple/wiki/IPTV-Simple-Home</summary>
-    <summary lang="et_EE">Kodi IPTV lisamoodul.</summary>
-    <summary lang="fi_FI">Kodin tallenninlisäosa IPTV-tuelle. https://github.com/afedchin/Kodi-addon-iptvsimple/wiki/IPTV-Simple-Home</summary>
-    <summary lang="fr_CA">Addiciel de numériscope Kodi pour la prise en charge d’IPTV</summary>
-    <summary lang="fr_FR">Extension enregistreur vidéo (PVR) pour la gestion IPTV.</summary>
-    <summary lang="gl_ES">Complemento PVR do Kodi de soporte á IPTV. https://github.com/afedchin/Kodi-addon-iptvsimple/wiki/IPTV-Simple-Home</summary>
-    <summary lang="he_IL">תוסף Kodi PVR עם תמיכה ב-IPTV. https://github.com/afedchin/Kodi-addon-iptvsimple/wiki/IPTV-Simple-Home</summary>
-    <summary lang="hr_HR">Kodi PVR dodatak za IPTV podršku.</summary>
-    <summary lang="hu_HU">Kodi PVR kiegészítő az IPTV támogatáshoz. https://github.com/afedchin/Kodi-addon-iptvsimple/wiki/IPTV-Simple-Home</summary>
-    <summary lang="id_ID">Pengaya PVR Kodi untuk dukungan IPTV. https://github.com/afedchin/Kodi-addon-iptvsimple/wiki/IPTV-Simple-Home</summary>
-    <summary lang="is_IS">Kodi upptökuviðbót fyrir stuðning við IPTV. https://github.com/afedchin/Kodi-addon-iptvsimple/wiki/IPTV-Simple-Home</summary>
-    <summary lang="it_IT">Add-on Kodi PVR per il supporto IPTV.</summary>
-    <summary lang="ja_JP">IPTVをサポートするKodi PVRアドオンです。https://github.com/afedchin/Kodi-addon-iptvsimple/wiki/IPTV-Simple-Home</summary>
-    <summary lang="ko_KR">IPTV 지원을 위한 Kodi PVR 애드온.</summary>
-    <summary lang="lt_LT">Kodi PVR priedas IPTV palaikymui. https://github.com/afedchin/Kodi-addon-iptvsimple/wiki/IPTV-Simple-Home</summary>
-    <summary lang="lv_LV">Kodi PVR pielikums IPTV atbalstam. https://github.com/afedchin/Kodi-addon-iptvsimple/wiki/IPTV-Simple-Home</summary>
-    <summary lang="mk_MK">Kodi PVR додаток за IPTV. https://github.com/afedchin/Kodi-addon-iptvsimple/wiki/IPTV-Simple-Home</summary>
-    <summary lang="ms_MY">Tambahan PVR Kodi untuk sokongan IPTV https://github.com/afedchin/Kodi-addon-iptvsimple/wiki/IPTV-Simple-Home</summary>
-    <summary lang="mt_MT">PVR addon ta' Kodi għall-IPTV. https://github.com/afedchin/Kodi-addon-iptvsimple/wiki/IPTV-Simple-Home</summary>
-    <summary lang="nb_NO">Kodi PVR-tillegg for IPTV-støtte. https://github.com/afedchin/Kodi-addon-iptvsimple/wiki/IPTV-Simple-Home</summary>
-    <summary lang="nl_NL">Kodi PVR-add-on voor IPTV-ondersteuning. https://github.com/afedchin/Kodi-addon-iptvsimple/wiki/IPTV-Simple-Home</summary>
-    <summary lang="pl_PL">Klient telewizji dla telewizji internetowej. Więcej informacji o dodatku: https://github.com/afedchin/Kodi-addon-iptvsimple/wiki/IPTV-Simple-Home</summary>
-    <summary lang="pt_BR">Addon de PVR no Kodi com suporte a IPTV. https://github.com/afedchin/Kodi-addon-iptvsimple/wiki/IPTV-Simple-Home</summary>
-    <summary lang="pt_PT">Add-on PVR do Kodi para suporte de IPTV. https://github.com/afedchin/Kodi-addon-iptvsimple/wiki/IPTV-Simple-Home</summary>
-    <summary lang="ro_RO">Supliment PVR Kodi pentru suport IPTV. https://github.com/afedchin/Kodi-addon-iptvsimple/wiki/IPTV-Simple-Home</summary>
-    <summary lang="ru_RU">Kodi PVR аддон для поддержки IPTV.</summary>
-    <summary lang="sk_SK">Kodi PVR doplnok umožňujúci IPTV podporu. https://github.com/afedchin/Kodi-addon-iptvsimple/wiki/IPTV-Simple-Home</summary>
-    <summary lang="sl_SI">Kodijev dodatek PVR s podporo za IPTV.</summary>
-    <summary lang="sr_RS">Kodi PVR додатни програм за IPTV подршку. https://github.com/afedchin/Kodi-addon-iptvsimple/wiki/IPTV-Simple-Home</summary>
-    <summary lang="sr_RS@latin">Kodi PVR dodatni program za IPTV podršku. https://github.com/afedchin/Kodi-addon-iptvsimple/wiki/IPTV-Simple-Home</summary>
-    <summary lang="sv_SE">PVR-tillägg med IPTV-support för Kodi. https://github.com/afedchin/Kodi-addon-iptvsimple/wiki/IPTV-Simple-Home</summary>
-    <summary lang="szl">Klijynt telewizyjny dlŏ telewizyje internetowyj. Wiyncyj informacyji ô przidŏwku: https://github.com/afedchin/Kodi-addon-iptvsimple/wiki/IPTV-Simple-Home</summary>
-    <summary lang="tr_TR">IPTV desteği için Kodi PVR eklentisi.</summary>
-    <summary lang="uk_UA">PVR надбудова Kodi для підтримки IPTV. https://github.com/afedchin/Kodi-addon-iptvsimple/wiki/IPTV-Simple-Home</summary>
-    <summary lang="zh_CN">支持 IPTV 的 Kodi PVR 插件。</summary>
-    <summary lang="zh_TW">支援IPTV的Kodi PVR附加元件。https://github.com/afedchin/Kodi-addon-iptvsimple/wiki/IPTV-Simple-Home。</summary>
-    <description lang="af_ZA">IPTV Simple PVR kliënt ondersteun M3U speellyste, stroom van lewendige TV vir multisaai / unisaai bronne, luister na radio kanale en EPG.</description>
-    <description lang="be_BY">IPTV Simple PVR Client падтрымлівае спісы прайгравання m3u, струменевае вяшчанне з аднаканальных і шматканальных крыніц, радыё і тэлегід.[CR]    [CR]Для прагляду дакументацыі наведайце: https://github.com/kodi-pvr/pvr.iptvsimple/blob/Matrix/README.md[CR]    </description>
-    <description lang="bg_BG">Прост клиент за ПВР за телевизия по Интернет. Поддържа списъци за възпроизвеждане във формат „m3u“, поточно предавана телевизия от източници с излъчване мултикаст и уникаст, слушане на радио канали и електронен програмен справочник.</description>
-    <description lang="ca_ES">Client senzill per a IPTV PVR compatible amb les llistes de reproducció m3u, transmissions en línia de TV en directe per als orígens difusió única o múltiple, escolta d'emissores de ràdio i guia electrònica de programació (EPG);    </description>
-    <description lang="cs_CZ">Jednoduchý klient PVR pro IPTV podporuje seznamy stop m3u, streamování živého vysílání pro zdroje vícesměrového nebo jednosměrového vysílání, poslech rozhlasových stanic a televizní program.[CR]    [CR]Pro dokumentaci navštivte https://github.com/kodi-pvr/pvr.iptvsimple/blob/Matrix/README.md[CR]    </description>
-    <description lang="cy_GB">Mae Cleient IPTV Simple PVR yn cynnal rhestrau m3u, ffrydio Teledu Byw o ffynonellau darlledu eang ac unigol, gwrando ar sianeli Radio ac Amserlen Rhaglenni.</description>
-    <description lang="da_DK">IPTV Simple PVR klient understøtter m3u playlister, streaming af direkte tv til multicast-/unicast-kilder, lytning til radiokanaler og EPG.[CR][CR]For dokumentation besøg: https://github.com/kodi-pvr/pvr.iptvsimple/blob/Matrix/README.md    </description>
-    <description lang="de_DE">IPTV Simple PVR Client unterstützt M3U-Wiedergabelisten, Streaming von Live-TV für Multicast-/Unicastquellen, Radiosender und EPG.    </description>
-    <description lang="el_GR">Απλός Πελάτης PVR του IPTV, με υποστήριξη λιστών αναπαραγωγής m3u, αναπαραγωγή ροών Live TV για πηγές πολλαπλής/μοναδικής διανομής, ακρόαση ραδιοφωνικών καναλιών και EPG.</description>
-    <description lang="en_AU">IPTV Simple PVR Client support m3u playlists, streaming of Live TV for multicast/unicast sources, listening to Radio channels and EPG.</description>
-    <description lang="en_GB">IPTV Simple PVR Client support m3u playlists, streaming of Live TV for multicast/unicast sources, listening to Radio channels and EPG.[CR]    [CR]For documentation visit: https://github.com/kodi-pvr/pvr.iptvsimple/blob/Matrix/README.md[CR]    </description>
-    <description lang="en_NZ">IPTV Simple PVR Client support m3u playlists, streaming of Live TV for multicast/unicast sources, listening to Radio channels and EPG.</description>
-    <description lang="en_US">IPTV Simple PVR Client support m3u playlists, streaming of Live TV for multicast/unicast sources, listening to Radio channels and EPG.</description>
-    <description lang="es_AR">Cliente simple PVR IPTV.  Reproduce de TV en Vivo multicast/unicast y listas m3u8[CR] . reproduce tambien canales de radio y GEP</description>
-    <description lang="es_ES">IPTV Simple PVR Client soporta listas de reproducción m3u, transmisión de TV en directo para fuentes multidifusión/unidifusión, escucha de canales de Radio y EPG.[CR] [CR]Para documentación visite: https://github.com/kodi-pvr/pvr.iptvsimple/blob/Matrix/README.md[CR]    </description>
-    <description lang="es_MX">IPTV Simple PVR Client soporta listas de reproducción m3u, streaming de Live TV para fuentes multicast / unicast, escuchando para canales de radio y EPG.</description>
-    <description lang="fi_FI">IPTV Simple PVR-pääte tukee m3u-toistolistoja, televisiolähetysten multicast-/unicast-suoratoistoa, radiokanavien kuuntelua sekä ohjelmaopasta.[CR]    [CR]Ohjeita löydät täältä: https://github.com/kodi-pvr/pvr.iptvsimple/blob/Matrix/README.md[CR]    </description>
-    <description lang="fr_CA">Client de numériscope simple pour IPTV, prenant en charge les listes de lecture m3u, la diffusion en continu des télés en direct pour les sources de multidiffusion et de monodiffusion, l’écoute de chaînes radio, et le GÉP.</description>
-    <description lang="fr_FR">Le client IPTV Simple PVR prend en charge les listes de lecture m3u, le streaming de la télévision en direct pour les sources multidiffusion/monodiffusion, l'écoute des chaînes de radio et de l'EPG.[CR] [CR]Pour la documentation, visitez : https://github.com/kodi-pvr/pvr.iptvsimple /blob/Matrix/README.md[CR]    </description>
-    <description lang="gl_ES">O cliente PVR simple de IPTV soporta listaxes m3u, transmisión de TV en directo para fontes multicast/unicast, escoita de canles de Radio e Guía.</description>
-    <description lang="he_IL">IPTV Simple PVR Client תומך ברשימות השמעה של m3u, הזרמת טלוויזיה בשידור חי עבור מקורות מרובי שידור/חד שידור, האזנה לערוצי רדיו ולוח שידורים..[CR]    [CR]לתיעוד ניתן לבקר: https://github.com/kodi-pvr/pvr.iptvsimple/blob/Matrix/README.md[CR]    </description>
-    <description lang="hr_HR">IPTV Simple PVR klijent podržava m3u popise izvođenja, strujanje TV programa s multicast/unicast izvora, slušanje radio programa i elektroničke programske vodiče (EPG).    [CR]Za dokumentaciju posjetite: https://github.com/kodi-pvr/pvr.iptvsimple/blob/Matrix/README.md[CR]    </description>
-    <description lang="hu_HU">Az IPTV PVR kiegészítő támogatja m3u listák lejátszását, élő TV adások hálózati streamelését, rádióadók hallgatását EPG adatok kezelésével.</description>
-    <description lang="id_ID">IPTV, klien PTV sederhana yang mendukung playlist m3u, pengaliran siaran TV langsung untuk sumber multicast/unicast, mendengarkan radio dan EPG.</description>
-    <description lang="is_IS">Einfaldur upptökubiðlari fyrir IPTV sem styður m3u spilunarlista, streymingu af beinum útsendingum frá multicast/unicast þjónustum, hlustun á útvarpsrásir og rafræna dagskrárvísa</description>
-    <description lang="it_IT">IPTV Simple PVR Client supporta playlist m3u, stream per sorgenti multicast/unicast, ascolto di canali radio ed EPG.[CR]    [CR]Per la documentazione visita: https://github.com/kodi-pvr/pvr.iptvsimple/blob/Matrix/README.md[CR]    </description>
-    <description lang="ja_JP">IPTVシンプルPVRクライアントは、m3uプレイリスト、マルチキャスト/ユニキャストのライブ TV ストリーミング、ラジオチャンネルやEPGの視聴をサポートしています。    </description>
-    <description lang="ko_KR">IPTV Simple PVR 클라이언트는 m3u 재생목록, 스트리밍, 멀티캐스트/유니캐스트 소스의 TV 시청, 라디오 채널과 EPG를 통한 청취를 지원합니다.[CR]    [CR]For documentation visit: https://github.com/kodi-pvr/pvr.iptvsimple/blob/Matrix/README.md[CR]    </description>
-    <description lang="lt_LT">IPTV Simple PVR klientas palaiko m3u grojaraščius, TV transliacijas iš multicast/unicast šaltinių, radijo stočių transliacijas ir EPG.</description>
-    <description lang="lv_LV">IPTV vienkāršais PVR klients atbalsta m3u spēļsarakstus, tiešraides TV straumēšanu multiraides/uniraides avotiem, radio kanālu klausīšanos un EPG.</description>
-    <description lang="mk_MK">IPTV Simple PVR Client поддржува m3u листи, гледање на Live TV од multicast/unicast извори, слушање Радио канали и EPG.</description>
-    <description lang="ms_MY">Klien PVR IPTV Simple menyokong senarai audio visual m3u, penstriman TV Langsung untuk sumber satu siaran/berbilang-siaran, mendengar saluran Radio dan EPG.</description>
-    <description lang="mt_MT">IPTV Simple PVR Client jiflaħ għal playlists m3u, streaming ta' TV Lajv għal sorsi multicast/unicast, smiegħ ta' stazzjonijiet tar-Radju u EPG.</description>
-    <description lang="nb_NO">IPTV Simple PVR-klient støtter m3u-spillelister, strømming av direkte-TV, lytting til radiokanaler og programguider.</description>
-    <description lang="nl_NL">IPTV Simple PVR cliënt ondersteunt m3u-afspeellijsten, streaming van live-TV voor multicast/unicastbronnen, luisteren naar radiozenders en EPG.</description>
-    <description lang="pl_PL">Klient telewizji dla telewizji internetowej obsługuje listy odtwarzania m3u, transmisję kanałów radiowych i telewizyjnych ze źródeł punktowych i grupowych oraz funkcje przewodnika telewizyjnego.</description>
-    <description lang="pt_BR">O IPTV Simple PVR Client oferece suporte para listas m3u, transmissão de TV ao vivo de fontes multicast/unicast, transmissão de rádios e, ainda, suporta o guia eletrônico de programação - EPG.    </description>
-    <description lang="pt_PT">Cliente IPTV Simple PVR com suporte a listas de reprodução m3u, transmissão de TV em direto de fontes multidifusão/unidifusão, ouvir estações de rádio e EPG.</description>
-    <description lang="ro_RO">PVR Client IPTV suporta liste m3u, redare TV în direct pentru surse de multicast/unicast, ascultare canale radio si EPG.</description>
-    <description lang="ru_RU">IPTV Simple PVR поддерживает просмотр потокового ТВ для юникаст/мультикаст источников, прослушивание радиоканалов и работу с телегидом.[CR]    [CR]Для документации посетите: https://github.com/kodi-pvr/pvr.iptvsimple/blob/Matrix/README.md[CR]    </description>
-    <description lang="sk_SK">Jednoduchý PVR klient IPTV podporuje mp3 zoznamy súborov, streamovanie živého televízneho vysielania ako multicast/unicast zdroje, počúvanie rozhlasových kanálov a EPG.[CR]    [CR]Pre dokumentáciu navštívte: https://github.com/kodi-pvr/pvr.iptvsimple/blob/Matrix/README.md[CR]    </description>
-    <description lang="sl_SI">IPTV Simple PVR Client podpira sezname predvajanja m3u, pretakanje TV v živo za multicast/unicast vire, poslušanje radijskih kanalov in EPG.[CR] [CR]Za dokumentacijo obiščite: https://github.com/kodi-pvr/pvr.iptvsimple /blob/Matrix/README.md[CR]    </description>
-    <description lang="sr_RS">IPTV Једноставан PVR Клијент подржава m3u листе за репродукцију, стримовање ТВ Уживо за multicast/unicast изворе, слушање Радио канала и EPG.</description>
-    <description lang="sr_RS@latin">IPTV Jednostavan PVR Klijent podržava m3u liste za reprodukciju, strimovanje TV Uživo za multicast/unicast izvore, slušanje Radio kanala i EPG.</description>
-    <description lang="sv_SE">IPTV Simple PVR Client stöder m3u-spellistor, strömmande Live-TV för multicast/unicast-källor, radiolyssning och EPG.</description>
-    <description lang="szl">Klijynt telewizyje dlŏ telewizyje internetowyj ôbsuguje wykŏzy ôdtwŏrzaniŏ m3u, szpricowanie kanałōw radyjowych i telewizyjnych ze źrōdeł pōnktowych i skupinowych, a tyż fōnkcyje EPG.</description>
-    <description lang="tr_TR">IPTV Basit PVR İstemcisi m3u çalma listeleri, multicast/unicast kaynaklar için Canlı TV akışı, radyo kanallarını dinleme ve EPG destekler.[CR]    [CR]Kullanım belgesi için ziyaret edin: https://github.com/kodi-pvr/pvr.iptvsimple/blob/Matrix/README.md[CR]    </description>
-    <description lang="zh_CN">IPTV Simple PVR 客户端支持 m3u 播放列表、多播/单播源直播电视、收听电台和电子节目单。    [CR] 访问 https://github.com/kodi-pvr/pvr.iptvsimple/blob/Matrix/README.md 以获取相关文档[CR]    </description>
-    <description lang="zh_TW">IPTV Simple PVR 用戶端支援m3u 播放列表，來自multicast/unicast 的即時電視串流，收聽廣播及電子節目表。[CR]    [CR]查看說明文件請造訪: https://github.com/kodi-pvr/pvr.iptvsimple/blob/Matrix/README.md[CR]    </description>
-    <disclaimer lang="af_ZA">Hierdie is onstabiele sagteware! Die outeurs is op geen manier verantwoordelik vir gefaalde spele, inkorrekte EPG tye, vermorsde ure, of enige ander ongewensde effekte.</disclaimer>
-    <disclaimer lang="be_BY">Аўтары не нясуць адказнасці за памылкі прайгравання, няправільны час у тэлегідзе, змарнаваны час і іншыя адмоўныя эфекты.</disclaimer>
-    <disclaimer lang="bg_BG">Тази програма е нестабилна! Авторите не носят отговорност за неуспешно възпроизвеждане, некоректни часове в електронния програмен справочник, пропиляното време и други нежелани ефекти.</disclaimer>
-    <disclaimer lang="ca_ES">Aquest programari és inestable! Els autors no es fan responsables de reproduccions fallides, horaris incorrectes a la guia electrònica de programació (EPG), hores perdudes o qualsevol altre efecte no desitjat.</disclaimer>
-    <disclaimer lang="cs_CZ">Tento software není stabilní! Autoři nejsou žádným způsobem zodpovědní za neúspěšná přehrávání, chybné časy televizního programu, ztracený čas nebo jakékoliv jiné nežádoucí efekty.</disclaimer>
-    <disclaimer lang="cy_GB">Mae'r feddalwedd hon yn fregus! Nid yw'r awduron yn gyfrifol mewn unrhyw ffordd am fethu recordio, amseru gwallus, oriau wedi eu gwastraffu nac effeithiau annymunol eraill.</disclaimer>
-    <disclaimer lang="da_DK">Udviklerne er på ingen måde ansvarlig for mislykkede afspilninger, forkerte EPG-tider, spildte timer eller andre uønskede konsekvenser.</disclaimer>
-    <disclaimer lang="de_DE">Die Autoren sind in keiner Weise verantwortlich für fehlgeschlagene Wiedergaben, falsche EPG-Zeiten, verschwendete Zeit oder unerwünschte Effekte jeglicher Art.</disclaimer>
-    <disclaimer lang="el_GR">Ασταθές πρόγραμμα! Οι δημιουργοί δεν είναι σε καμία περίπτωση υπεύθυνοι για αποτυχημένες εγγραφές, λανθασμένους χρονοδιακόπτες, χαμένες ώρες, ή κάθε είδους ανεπιθύμητα αποτελέσματα.</disclaimer>
-    <disclaimer lang="en_AU">This is unstable software! The authors are in no way responsible for failed playings, incorrect EPG times, wasted hours, or any other undesirable effects.</disclaimer>
-    <disclaimer lang="en_GB">The authors are in no way responsible for failed playings, incorrect EPG times, wasted hours, or any other undesirable effects.</disclaimer>
-    <disclaimer lang="en_NZ">This is unstable software! The authors are in no way responsible for failed playings, incorrect EPG times, wasted hours, or any other undesirable effects.</disclaimer>
-    <disclaimer lang="en_US">This is unstable software! The authors are in no way responsible for failed playings, incorrect EPG times, wasted hours, or any other undesirable effects.</disclaimer>
-    <disclaimer lang="es_AR">Este es un software inestable. El autor no se hace responsable por reproducciones fallidas, datos de GEP incorrectos, horas perdidas o cualquier otro efecto indeseable.</disclaimer>
-    <disclaimer lang="es_ES">¡Este es un software inestable! El autor no se hace responsable de reproducciones fallidas, datos de EPG incorrectos, horas perdidas o cualquier otro efecto no deseado.</disclaimer>
-    <disclaimer lang="es_MX">¡Este es un software inestable! Los autores no son responsables en absoluto de reproducciones fallidas, tiempos EPG incorrectos, desperdicio de horas, o cualquier otro efecto indeseable.</disclaimer>
-    <disclaimer lang="eu_ES">Software hau ezegonkorra da! Egileak ez dira inolaz ere erantzule editen erreprodukzio akatsez, EPG denbora okerrez, ordu galduez edo beste edozein ondorio ezerosotaz.</disclaimer>
-    <disclaimer lang="fi_FI">Tämä on epävakaa ohjelmisto! Sen kehittäjät eivät ole millään tavoin vastuussa epäonnistuneista toistoista, virheellisistä ohjelmaoppaan aikatauluista, hukatusta ajasta tai mistään muistakaan ei-toivotuista seurauksista.</disclaimer>
-    <disclaimer lang="fr_CA">Ce logiciel est instable ! Les auteurs ne sont aucunement responsables des lectures défaillantes, d’horaires erronés du GÉP, des heures perdues ou tout autre effet indésirable.</disclaimer>
-    <disclaimer lang="fr_FR">Logiciel en cours d'élaboration ! Les auteurs ne sont en aucun cas responsables de l'échec des enregistrements, programmations défectueuses, temps perdu ou autres effets indésirables.</disclaimer>
-    <disclaimer lang="gl_ES">Este software non é estábel! Os autores non se fan responsábeis dos erros na reproducción, horarios incorrectos na Guía, horas vencidas, e otros efectos non desexados.</disclaimer>
-    <disclaimer lang="he_IL">זוהי איננה הרחבה יציבה! המפתחים אינם אחראים על כשלון בניגון, זמנים שגויים במדריך השידורים, שעות מבוזבזות או כל תופעה לא רצויה אחרת.</disclaimer>
-    <disclaimer lang="hr_HR">Ovo je nestabilan softver! Autori nisu ni na koji način odgovorni za neuspjelo snimanje, netočna zakazana snimanja, izgubljene sate, ili bilo koje druge neželjene učinke.</disclaimer>
-    <disclaimer lang="hu_HU">Ez nem stabil szoftver! A készítők nem vállalnak felelősséget, a hibás felvételért, rossz időzítésért, elvesztegetett időért...</disclaimer>
-    <disclaimer lang="id_ID">Perangkat lunak ini belum stabil. Penulis tidak akan bertanggung-jawa untuk kegagalan penyetelan, waktu EPG yang tidak tepat, Waktu yang terbuang dan efek yang tidak diinginkan lainnya.</disclaimer>
-    <disclaimer lang="is_IS">Þetta er óstöðugur hugbúnaður! Höfundarnir eru á engan hátt ábyrgir fyrir misheppnuðum spilunum, röngum upptökutímum, klukkustundum sem að fóru í súginn eða nokkrum öðrum óæskilegum áhrifum.</disclaimer>
-    <disclaimer lang="it_IT">Gli autori non sono in alcun modo responsabili per riproduzioni fallite, tempi EPG errati, ore sprecate o qualsiasi altro effetto indesiderato.</disclaimer>
-    <disclaimer lang="ja_JP">これは不安定なソフトウェアです！本プログラムの作者は、再生の失敗、EPG 時刻のずれ、無駄にした時間、その他あらゆる好ましくない結果について責任を負わないものとします。</disclaimer>
-    <disclaimer lang="ko_KR">이 소프트웨어는 불안정합니다! 재생 실패, 정확하지 않은 EPG 시각, 시간 낭비, 의도하지 않은 현상에 대해 제작자는 어떤 책임도 지지 않습니다.</disclaimer>
-    <disclaimer lang="lt_LT">Tai yra nestabili programinė įranga! Autoriai nėra atsakingi dėl nepavykusio atkūrimo, klaidingo EPG laiko, prarastų valandų ar kito nepageidaujamo poveikio.</disclaimer>
-    <disclaimer lang="lv_LV">Šī ir nestabila programmatūra! Autori nav atbildīgi par neizdevušos atskaņošanu, nepareizu EPG laiku, iztērētām stundām vai jebkādiem citiem nevēlamiem efektiem.</disclaimer>
-    <disclaimer lang="mk_MK">Ова е нестабилен софтвер! Авторите во никој случај не се одговорни за неуспешно гледање, неточни времиња во EPG, вашето потрошено време или било кои непосакувани ефекти.</disclaimer>
-    <disclaimer lang="ms_MY">Perisian ini tidak stabi! Pengarang tidak bertanggungjawab atas kegagalan memainkan, pemasa EPG yang tidak betul, pembaziran masa atau sebarang kesan tidak diingini.</disclaimer>
-    <disclaimer lang="mt_MT">Dan il-programm mhuwiex stabbli! L-awturi m'huma bl-ebda mod responsabbli għal daqq li ma jirnexxiex, ħinijiet tal-EPG żbaljati, siegħat moħlija jew kwalunkwe effet ieħor mhux mixtieq.</disclaimer>
-    <disclaimer lang="nb_NO">Dette er et ustabilt program! Skaperne er på ingen måte ansvarlig for feil ved avspilling, feil programguidetider, bortkastede timer eller andre uønskede ting.</disclaimer>
-    <disclaimer lang="nl_NL">De auteurs zijn op geen enkele wijze aansprakelijk voor mislukte opnames, incorrecte EPG-tijden, verspilde uren, of enig ander ongewild neveneffect..</disclaimer>
-    <disclaimer lang="pl_PL">Oprogramowanie nadal jest w fazie rozwoju i jest niestabilne! Autorzy w żaden sposób nie są odpowiedzialni za nieudane nagrania, błędy w harmonogramie nagrań, zmarnowany czas ani jakiekolwiek inne niepożądane efekty.</disclaimer>
-    <disclaimer lang="pt_BR">Este é um software instável! Os autores não são responsáveis por falhas nas reproduções, horários incorretos no EPG, horas perdidas ou quaisquer outros efeitos indesejáveis.</disclaimer>
-    <disclaimer lang="pt_PT">Este software é instável! Os autores não podem ser responsabilizados por gravações falhadas, temporizadores incorretos, horas desperdiçadas ou qualquer outro tipo de efeitos indesejáveis...</disclaimer>
-    <disclaimer lang="ro_RO">Această parte din program nu este stabilă! Autorii nu sunt responsabili în nici un fel pentru înregistrări eșuate, cronometrări EPG incorecte, ore pierdute sau orice alte efecte nedorite.</disclaimer>
-    <disclaimer lang="ru_RU">Это нестабильная программа! Авторы не несут ответственности за неудачные воспроизведение, неверные время EPG, потраченное время и прочие нежелательные эффекты.</disclaimer>
-    <disclaimer lang="sk_SK">Toto je nestabilný softvér! Autori nie sú v žiadnom prípade zodpovední za chybné prehrávanie, nesprávne časy EPG, premrhané hodiny alebo akékoľvek iné nežiadúce účinky.</disclaimer>
-    <disclaimer lang="sl_SI">To je nestabilna programska oprema! Avtorji niso odgovorni za neuspela predvajanja, nepravilne čase v EPG, zapravljen čas in katerikoli drug neželen učinek.</disclaimer>
-    <disclaimer lang="sr_RS">Овај софтвер је нестабилан! Аутори ни на који начин нису одговорни за неуспела снимања, неисправне тајмере, изгубљене сате, или било које друге нежељене ефекте.</disclaimer>
-    <disclaimer lang="sr_RS@latin">Ovaj softver je nestabilan! Autori ni na koji način nisu odgovorni za neuspela snimanja, neispravne tajmere, izgubljene sate, ili bilo koje druge neželjene efekte.</disclaimer>
-    <disclaimer lang="sv_SE">Denna mjukvara är ostabil! Författarna kan inte på något sätt hållas ansvariga för felaktiga uppspelningar, EPG-tider, bortslösade timmar eller andra oönskade effekter.</disclaimer>
-    <disclaimer lang="szl">To je niystabilny softwer! Autōry niy sōm ôdpedzialne za niypodarzōne graniy, niynŏleżne godziny EPG, stracōne godziny i inksze niychciane efekty.</disclaimer>
-    <disclaimer lang="tr_TR">Yazanlar oynatma hatası, yanlış EPG zamanları, harcanmış saatler ya da diğer etkilerden sorumlu değildir.</disclaimer>
-    <disclaimer lang="zh_CN">作者不对播放失败、错误的电子节目单时间造成时间浪费或其它不良影响负责。</disclaimer>
-    <disclaimer lang="zh_TW">這是測試中的軟體！原創作者無法針對以下情況負責：包括播放失敗，不正確的電子節目表，多餘的時數，或任何不可預期的不良影響。</disclaimer>
-  </extension>
-</addon><addon id="repository.diggz" name="Diggz Repository" version="23" provider-name="Diggz">
+<addons><addon id="plugin.program.chef21" name="[B][COLOR chartreuse]Chef Omega Wizard[/COLOR][/B]" version="485" provider-name="Diggz">
+	<requires>
+		<import addon="xbmc.python" version="3.0.1" />
+		<import addon="repository.xbmc.org" />		
+		<import addon="script.module.accountmgr" />
+		<import addon="script.module.acctview" />
+		<import addon="script.module.requests" />
+	</requires>
+	<extension point="xbmc.python.pluginsource" library="addon.py">
+		<provides>executable</provides>
+	</extension>
+	<extension point="xbmc.service" library="service.py" />
+	<extension point="xbmc.addon.metadata">
+		<summary lang="en_GB">Simple Omega Wizard is a lightweight template for installing builds on Kodi 20 Nexus. Has some code from Aftermath Wizard by Surfacingx. Skin Switch by OpenELEQ. Base code by BYB. Credits to them and all others who contributed.</summary>
+		<description lang="en_GB">Kodi Omega 21 Wizard</description>
+		<disclaimer lang="en_GB">This Addon contains no content</disclaimer>
+		<language>en</language>
+		<platform>all</platform>
+		<license>GPL-2.0-or-later</license>
+		<forum />
+		<website /> 
+		<email />
+		<source />
+		<news>
+		3.0.2a
+		2.1.8 - Added logviewer to maintenance. 2.1.7 - Fixed issue with binary installs failing. Updated Advancedsettings configs. Added notification at start of backups. 2.1.6.1 - Fix permissions error on Windows devices. Added keeping binaries list when installs fail. 2.1.6 - Added binary addon installation to build install. Fix for Dropbox zips not showing the file length. Fixed error on startup when buildfile or notify urls are invalid. 2.1.5 - Added option to cancel prompts for build update and no build. 2.1.4 - Small fix to Whitelist 2.1.3 - Added prompt that opens the Build Menu when there's an update or now build installed. Added Force Close shortcut. Restructured addon a bit. There is now a uservar py in root of addon for user variables. 2.1.1 - Added Custom Backups Path 2.1.0 - Added Backup/Restore 2.0.7 - Added Whitelist, Fixes to Dropbox urls. 2.0.5 - Added Authorize Debrid, Added language strings to most labels, code cleanup 2.0.3 - Added video preview 2.0.2 - Fixed issue with backup restore  2.0.0 Major changes to the framework of the addon. Allocated most of the code to modules. Added some new modules. Added support for Dropbox links. Fixed cancel download. 1.1.3 - Fix to save items when items not selected 1.1.2 - Remade service.py, small Bugfixes. 1.1.1 - Fixed an issue with update checker. 1.1.0 - Fixed Resolveurl path in save data. 1.0.9 - Added settings to main menu. 1.0.8 - Fixed percentage during build download, 1.0.7 - Added option to link to another xml or json file. This is good for teams or community wizards as each builder can have their own xml. Also changed format of the builds xml. Please refer to builds_newformat.xml located in the resources folder. The old format will still work but if the user is running an older version of the wizard, they'll only see the version number as the name. They'll want to update to fix that. 1.0.6 - Added Notifications Dialog. Special thanks to Blue for art and helping with the design. 1.0.5 - Bugfixes. 1.0.3 - Added download progress to build install. 1.0.2 - Added option to encode the buildfile variable to a base64 string. 1.0.1 - Added the option to use json for build file. 1.0.0 - Basic clean up. Ready for official release. 0.0.9 - Added Save Menu, 0.0.8 - Bug fixes, 0.0.7 - Added Advanced Settings presets to Maintenance. 0.0.6 - Added Clear Packages, the first of the Maintenance section.
+0.0.5 - Bug fixes
+0.0.4 - Added enabling of disabled addons on build first run. Added update repos on build first run. 
+0.0.3 - Added prompt notifying when new version of installed build is available.
+0.0.2 - Initial Release
+		</news>
+		<assets>
+				<icon>resources/icon.png</icon>
+				<fanart>resources/fanart.jpg</fanart>
+				<banner />
+				<clearlogo />
+				<screenshot />
+		</assets>
+	</extension>
+</addon><addon id="repository.Magnetic" name="Magnetic Repo" version="1.1.0b" provider-name="1-cool-guy">
+        <requires>
+            <import addon="xbmc.addon" version="12.0.0" />
+        </requires>
+        <extension point="xbmc.addon.repository" name="Magnetic Repo">
+        	<dir>
+            <info compressed="false">https://magnetic.website/__zips/addons.xml</info>
+            <checksum>https://magnetic.website/__zips/addons.xml.md5</checksum>
+            <datadir zip="true">https://magnetic.website/__zips/</datadir>
+            <hashes>false</hashes>
+            </dir>
+			<dir>
+		    <info compressed="false">https://raw.githubusercontent.com/teamuniversal/scrapers/master/_modules4all/zips/addons.xml</info>
+            <checksum>https://raw.githubusercontent.com/teamuniversal/scrapers/master/_modules4all/zips/addons.xml.md5</checksum>
+            <datadir zip="true">https://raw.githubusercontent.com/teamuniversal/scrapers/master/_modules4all/zips/</datadir>
+            <hashes>false</hashes>
+			</dir>
+			<dir>
+            <info compressed="false">https://raw.githubusercontent.com/totalrevolution/python-koding/master/zips/addons.xml</info>
+            <checksum>https://raw.githubusercontent.com/totalrevolution/python-koding/master/zips/addons.xml.md5</checksum>
+            <datadir zip="true">https://raw.githubusercontent.com/totalrevolution/python-koding/master/zips/</datadir>
+            </dir>
+            <dir>
+            <info compressed="false">https://raw.githubusercontent.com/jenaddon/repository.jenrepo/master/zips/addons.xml</info>
+            <checksum>https://raw.githubusercontent.com/jenaddon/repository.jenrepo/master/zips/addons.xml.md5</checksum>
+            <datadir zip="true">https://raw.githubusercontent.com/jenaddon/repository.jenrepo/master/zips/</datadir>
+            <hashes>false</hashes>
+            </dir>	
+			<dir>
+            <info compressed="false">https://raw.githubusercontent.com/a4k-openproject/repository.openscrapers/master/zips/addons.xml</info>
+            <checksum>https://raw.githubusercontent.com/a4k-openproject/repository.openscrapers/master/zips/addons.xml.md5</checksum>
+            <datadir zip="true">https://raw.githubusercontent.com/a4k-openproject/repository.openscrapers/master/zips/</datadir>
+        </dir>
+		<dir>
+    <info compressed="false">https://raw.githubusercontent.com/Gujal00/smrzips/master/addons.xml</info>
+    <checksum>https://raw.githubusercontent.com/Gujal00/smrzips/master/addons.xml.md5</checksum>
+    <datadir zip="true">https://raw.githubusercontent.com/Gujal00/smrzips/master/zips/</datadir>
+</dir>
+        </extension>
+        <extension point="xbmc.addon.metadata">
+            <summary>Official Magnetic Repository</summary>
+            <description>Welcome to magnetic repo. Please enjoy</description>
+            <platform>all</platform>
+            <genre>movies,usa</genre>
+			<assets>
+			    <icon>icon.png</icon>
+			</assets>
+        </extension>
+    </addon><addon id="repository.diggz" name="Diggz Repository" version="23" provider-name="Diggz">
     <extension point="xbmc.addon.repository" name="Diggz Repository">
         <dir minversion="20.90.0" maxversion="22.9.9">
             <info compressed="false">https://raw.githubusercontent.com/nebulous42069/Omega/master/omega/zips/addons.xml</info>
@@ -656,12 +132,96 @@
             <icon>icon.png</icon>
         </assets>
     </extension>
-</addon><addon id="repository.lusd" name="LUSD REPO" version="1.1.0" provider-name="sweetkitten27">
+</addon><addon id="repository.kodinerds" name="Kodinerds Addon Repo" version="7.0.1.7" provider-name="Kodinerds">
+    <requires>
+        <import addon="xbmc.addon" version="12.0.0" />
+    </requires>
+    <extension point="xbmc.addon.repository" name="Kodinerds Addon Repo">
+        <dir>
+            <info compressed="true">https://repo.kodinerds.net/addons/addons.xml</info>
+            <checksum>https://repo.kodinerds.net/addons/addons.xml.md5</checksum>
+            <datadir zip="true">https://repo.kodinerds.net/addons</datadir>
+            <hashes>false</hashes>
+        </dir>
+        <dir minversion="21.9.9" maxversion="22.9.0">
+            <info compressed="true">https://repo.kodinerds.net/addons/piers/addons.xml</info>
+            <checksum>https://repo.kodinerds.net/addons/piers/addons.xml.md5</checksum>
+            <datadir zip="true">https://repo.kodinerds.net/addons/piers/zip/</datadir>
+            <hashes>false</hashes>
+        </dir>
+        <dir minversion="21.0.0" maxversion="22.9.0">
+            <info compressed="true">https://repo.kodinerds.net/addons/omega/addons.xml</info>
+            <checksum>https://repo.kodinerds.net/addons/omega/addons.xml.md5</checksum>
+            <datadir zip="true">https://repo.kodinerds.net/addons/omega/zip/</datadir>
+            <hashes>false</hashes>
+        </dir>
+        <dir minversion="20.0.0" maxversion="22.9.0">
+            <info compressed="true">https://repo.kodinerds.net/addons/nexus/addons.xml</info>
+            <checksum>https://repo.kodinerds.net/addons/nexus/addons.xml.md5</checksum>
+            <datadir zip="true">https://repo.kodinerds.net/addons/nexus/zip/</datadir>
+            <hashes>false</hashes>
+        </dir>
+        <dir minversion="19.0.0" maxversion="22.9.0">
+            <info compressed="true">https://repo.kodinerds.net/addons/matrix/addons.xml</info>
+            <checksum>https://repo.kodinerds.net/addons/matrix/addons.xml.md5</checksum>
+            <datadir zip="true">https://repo.kodinerds.net/addons/matrix/zip/</datadir>
+            <hashes>false</hashes>
+        </dir>
+        <dir minversion="18.0.0" maxversion="18.9.0">
+            <info compressed="true">https://repo.kodinerds.net/addons/leia/addons.xml</info>
+            <checksum>https://repo.kodinerds.net/addons/leia/addons.xml.md5</checksum>
+            <datadir zip="true">https://repo.kodinerds.net/addons/leia/zip/</datadir>
+            <hashes>false</hashes>
+        </dir>
+        <dir minversion="17.0.0" maxversion="18.9.0">
+            <info compressed="true">https://repo.kodinerds.net/addons/krypton/addons.xml</info>
+            <checksum>https://repo.kodinerds.net/addons/krypton/addons.xml.md5</checksum>
+            <datadir zip="true">https://repo.kodinerds.net/addons/krypton/zip/</datadir>
+            <hashes>false</hashes>
+        </dir>
+        <dir minversion="16.0.0" maxversion="18.9.0">
+            <info compressed="true">https://repo.kodinerds.net/addons/jarvis/addons.xml</info>
+            <checksum>https://repo.kodinerds.net/addons/jarvis/addons.xml.md5</checksum>
+            <datadir zip="true">https://repo.kodinerds.net/addons/jarvis/zip/</datadir>
+            <hashes>false</hashes>
+        </dir>
+        <dir minversion="15.0.0" maxversion="18.9.0">
+            <info compressed="true">https://repo.kodinerds.net/addons/isengard/addons.xml</info>
+            <checksum>https://repo.kodinerds.net/addons/isengard/addons.xml.md5</checksum>
+            <datadir zip="true">https://repo.kodinerds.net/addons/isengard/zip/</datadir>
+            <hashes>false</hashes>
+        </dir>
+        <dir minversion="14.0.0" maxversion="18.9.0">
+            <info compressed="true">https://repo.kodinerds.net/addons/helix/addons.xml</info>
+            <checksum>https://repo.kodinerds.net/addons/helix/addons.xml.md5</checksum>
+            <datadir zip="true">https://repo.kodinerds.net/addons/helix/zip/</datadir>
+            <hashes>false</hashes>
+        </dir>
+        <dir minversion="13.0.0" maxversion="18.9.0">
+            <info compressed="true">https://repo.kodinerds.net/addons/gotham/addons.xml</info>
+            <checksum>https://repo.kodinerds.net/addons/gotham/addons.xml.md5</checksum>
+            <datadir zip="true">https://repo.kodinerds.net/addons/gotham/zip/</datadir>
+            <hashes>false</hashes>
+        </dir>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+        <summary lang="en">Addon repository of the Kodinerds Community</summary>
+        <description lang="en">The 'Nerdsrepo' is the Repository of the german Kodi Community 'Kodinerds' (www.kodinerds.net). Most of the hosted Addons here are active developed and supported by the members of the Community. Nerdsrepo is an unofficial Repository of the Kodi Media Center Software</description>
+        <summary lang="de">Addon Repository der Kodinerds Community</summary>
+        <description lang="de">Das 'Nerdsrepo' ist das Addon Repository der deutschen Kodi-Community 'Kodinerds' (www.kodinerds.net). Die meisten der hier im Nerdsrepo gehosteten Addons werden von den Mitgliedern der Community aktiv entwickelt und unterstützt. Das Nerdsrepo ist ein unoffizielles Repository der Kodi Media Center Software.</description>
+        <disclaimer />
+        <platform>all</platform>
+        <assets>
+            <icon>icon.png</icon>
+            <fanart>fanart.jpg</fanart>
+        </assets>
+    </extension>
+</addon><addon id="repository.lusd" name="LUSD REPO" version="1.1.2" provider-name="sweetkitten27">
     <extension point="xbmc.addon.repository" name="LUSD KODI REPOSITORY">
         <dir>
-            <info compressed="false">https://sweetkitten27.github.io/repo/zips/addons.xml</info>
-            <checksum>https://sweetkitten27.github.io/repo/zips/addons.xml.md5</checksum>
-            <datadir zip="true">https://sweetkitten27.github.io/repo/zips/</datadir>
+            <info compressed="false">https://lusd1.org/kodi/repository.lusd/repo/zips/addons.xml</info>
+            <checksum>https://lusd1.org/kodi/repository.lusd/repo/zips/addons.xml.md5</checksum>
+            <datadir zip="true">https://lusd1.org/kodi/repository.lusd/repo/zips/</datadir>
         </dir>
     </extension>
     <extension point="xbmc.addon.metadata">
@@ -734,54 +294,283 @@
       <fanart>fanart.jpg</fanart>
     </assets>
   </extension>
-</addon><addon id="script.ivueguide" name="Ivue TV Guide" version="4.3.2" provider-name="iVue Tv Guide">
-	<requires>
-		<import addon="script.module.simplejson" version="2.0.10" />
-		<import addon="script.module.beautifulsoup4" />
-		<import addon="script.module.requests" />
-	</requires>
-	<extension point="xbmc.python.script" library="addon.py" />
-    <extension point="xbmc.service" library="service.py" start="login" />
+</addon><addon id="repository.thecrew" name="[COLOR orchid]THE CREW REPO[/COLOR]" provider-name="The Crew" version="0.3.7">
+	<extension point="xbmc.addon.repository" name="The Crew">
+			<dir minversion="18.9.9">
+			<info compressed="false">https://raw.githubusercontent.com/thecrewwh/zips/master/matrix/_zip/addons.xml</info>
+			<checksum>https://raw.githubusercontent.com/thecrewwh/zips/master//matrix/_zip/addons.xml.md5</checksum>
+			<datadir zip="true">https://raw.githubusercontent.com/thecrewwh/zips/master//matrix/_zip</datadir>
+			</dir>
+			<dir>
+			<info compressed="false">https://raw.githubusercontent.com/Gujal00/smrzips/master/addons.xml</info>
+			<checksum>https://raw.githubusercontent.com/Gujal00/smrzips/master/addons.xml.md5</checksum>
+			<datadir zip="true">https://raw.githubusercontent.com/Gujal00/smrzips/master/zips/</datadir>
+			</dir>
+			<dir>
+			<info compressed="false">https://raw.githubusercontent.com/unhingedthemes/zips/main/_zips/addons.xml</info>
+			<checksum>https://raw.githubusercontent.com/unhingedthemes/zips/main/_zips/addons.xml.md5</checksum>
+			<datadir zip="true">https://raw.githubusercontent.com/unhingedthemes/zips/main/_zips/</datadir>
+			</dir>
+			<dir>
+			<info compressed="false">https://github.com/OldManJax/repository.animaniac/raw/master/addons.xml</info>
+			<checksum>https://github.com/OldManJax/repository.animaniac/raw/master/addons.xml.md5</checksum>
+			<datadir zip="true">https://github.com/OldManJax/repository.animaniac/raw/master/</datadir>
+			</dir>
+			<dir>
+			<info compressed="false">https://raw.githubusercontent.com/dobbelina/repository.dobbelina/master/addons.xml</info>
+			<checksum>https://raw.githubusercontent.com/dobbelina/repository.dobbelina/master/addons.xml.md5</checksum>
+			<datadir zip="true">https://raw.githubusercontent.com/dobbelina/repository.dobbelina/master/</datadir>
+			</dir>
+	</extension>
 	<extension point="xbmc.addon.metadata">
-	<provides>video</provides>
-		<description lang="en">Final Final Final ISH Release of Ivue Guide, simple free and effective, We hope you like it now with category intergration #teamiVue, Huge thanks to all coders out there for getting involved.</description>
-		<disclaimer lang="en">Final Release of Ivue Guide and is forked and based on FTV Guide, Dixie , Ivue ,Primeval, tommy winthers original code, </disclaimer>
+		<summary lang="en">The Crew is a team of individuals that does what it can to provide others, you the best in entertainment.</summary>
+		<description lang="en">Many come, Many go. The true and dedicated are here. We here</description>
+		<platform>all</platform>
+		<license>GNU GENERAL PUBLIC LICENSE. Version 3, 29 June 2007</license>
+		<disclaimer lang="en">The author of this addon do not host any of the content which is found and have no affiliation with any of the content providers. This addon simply searches websites for content. Use at your own risk!</disclaimer>
+		<assets>
+			<icon>icon.png</icon>
+			<fanart>fanart.jpg</fanart>
+			<screenshot>resources/art/ss/1.png</screenshot>
+			<screenshot>resources/art/ss/2.png</screenshot>
+			<screenshot>resources/art/ss/3.png</screenshot>
+		</assets>
+	</extension>
+</addon><addon id="visualization.projectm" version="20.2.1" name="projectM" provider-name="Team Kodi">
+  <requires>
+<import addon="kodi.binary.global.main" minversion="2.0.0" version="2.0.2" />
+<import addon="kodi.binary.instance.visualization" minversion="4.0.0" version="4.0.0" /></requires>
+  <extension point="xbmc.player.musicviz" library_android="libvisualization.projectm.so" />
+  <extension point="xbmc.addon.metadata">
+    <platform>android-armv7</platform>
+    <license>GPL-2.0-or-later</license>
+    <source>https://github.com/xbmc/visualization.projectm</source>
+    <assets>
+      <icon>resources/icon.png</icon>
+      <fanart>resources/fanart.jpg</fanart>
+      <screenshot>resources/screenshot-01.jpg</screenshot>
+      <screenshot>resources/screenshot-02.png</screenshot>
+      <screenshot>resources/screenshot-03.jpg</screenshot>
+      <screenshot>resources/screenshot-04.jpg</screenshot>
+      <screenshot>resources/screenshot-05.jpg</screenshot>
+      <screenshot>resources/screenshot-06.jpg</screenshot>
+      <screenshot>resources/screenshot-07.jpg</screenshot>
+      <screenshot>resources/screenshot-08.jpg</screenshot>
+      <screenshot>resources/screenshot-09.jpg</screenshot>
+      <screenshot>resources/screenshot-10.jpg</screenshot>
+    </assets>
+    <summary lang="af_ZA">projectM vat jou op 'n vlug deur die klankgolwe wat jy hoor</summary>
+    <summary lang="ar_SA">مشروع M يجعلك تطير بين موحات الصوت التي تسمعها</summary>
+    <summary lang="bg_BG">"projectM" ще Ви отведе на пътешествие между звуковите вълни, които чувате</summary>
+    <summary lang="ca_ES">projectM et fa volar a través de les ones de so que escoltes</summary>
+    <summary lang="cs_CZ">projectM s Vámi proletí zvukovými vlnamy, které posloucháte</summary>
+    <summary lang="cy_GB">Mae projectM yn eich hedeg drwy'r tonnau sain</summary>
+    <summary lang="da_DK">projectM tager dig på en flyvetur gennem lydbølgerne, du lytter til</summary>
+    <summary lang="de_DE">projectM lässt Dich durch den Sound fliegen, den Du gerade hörst</summary>
+    <summary lang="el_GR">Το projectM σας ταξιδεύει μέσα στα ηχητικά κύματα που ακούτε</summary>
+    <summary lang="en_AU">projectM takes you flying through the soundwaves you're hearing</summary>
+    <summary lang="en_GB">projectM takes you flying through the soundwaves you're hearing</summary>
+    <summary lang="en_NZ">projectM takes you flying through the soundwaves you're hearing</summary>
+    <summary lang="en_US">projectM takes you flying through the soundwaves you're hearing</summary>
+    <summary lang="es_AR">projectM te lleva volando a través de las ondas que estás escuchando</summary>
+    <summary lang="es_ES">projectM te lleva volando a través de las ondas que estás escuchando</summary>
+    <summary lang="es_MX">projectM te lleva volando a través de las ondas de sonido que estás escuchando</summary>
+    <summary lang="et_EE">projectM viib sind lennates läbi helilainete mida kuulad</summary>
+    <summary lang="fi_FI">projectM lennättää sinut ääniaaltojen läpi</summary>
+    <summary lang="fr_CA">projectM vous entraine à travers les ondes sonores que vous écoutez</summary>
+    <summary lang="fr_FR">projectM vous entraine à travers les ondes sonores que vous écoutez</summary>
+    <summary lang="gl_ES">projectM lévao voando a través das ondas de son que está a ouvir</summary>
+    <summary lang="he_IL">projectM לוקח אותך לתעופה דרך גלי הסאונד שאתה שומע</summary>
+    <summary lang="hr_HR">projectM vam omogućuje let kroz zvuk koji čujete</summary>
+    <summary lang="hu_HU">A projectM végigrepít a zene hullámain</summary>
+    <summary lang="id_ID">ProjectM membawa anda terbang melalui gelombang suara yang anda dengar</summary>
+    <summary lang="is_IS">Með projectM flýgurðu í gegnum hljóðbylgjurnar sem þú heyrir</summary>
+    <summary lang="it_IT">projectM ti fa volare tra le onde sonore di ciò che stai ascoltando</summary>
+    <summary lang="ja_JP">projectM - 音楽の波の上を飛ぶ</summary>
+    <summary lang="ko_KR">projectM 은 사운드웨이브 속으로 날아가는듯한 효과를 보여줍니다</summary>
+    <summary lang="lt_LT">projectM nukelia Jus į nuostabų skrydį virš debesų, ištiesų fantastiškų garsų gausą</summary>
+    <summary lang="lv_LV">projectM paņem Jūs līdzi lidojumā cauri skaņu viļņiem, kurus dzirdat</summary>
+    <summary lang="mk_MK">projectM ве води на летање низ звучните бранови на музиката што ја слушате</summary>
+    <summary lang="nb_NO">projectM tar deg på en reise flygende gjenom lydbølgene du hører</summary>
+    <summary lang="nl_NL">projectM-visualisatie</summary>
+    <summary lang="pl_PL">projectM zabiera Cię w niesamowity lot w chmurach aktualnie słuchanych dźwięków</summary>
+    <summary lang="pt_BR">O projectM leva-o a voar nas ondas sonoras que está a ouvir</summary>
+    <summary lang="pt_PT">O projectM leva-o num voo através das ondas sonoras que está a ouvir</summary>
+    <summary lang="ro_RO">projectM îți oferă o senzație auditivă unică astfel încât simți că zbori printre undele sonore pe care le asculți</summary>
+    <summary lang="ru_RU">projectM отправит вас в полёт через звуковые волны, которые вы слышите</summary>
+    <summary lang="sk_SK">projektM s Vami poletí zvukovými vlnami, ktoré počúvate</summary>
+    <summary lang="sl_SI">projectM vas popelje čez valovanje zvoka, ki ga poslušate</summary>
+    <summary lang="sq_AL">projectM të bën të fluturosh nëpër valet e tingullit që i dëgjon</summary>
+    <summary lang="sv_SE">projectM tar med dig på en flygtur genom ljudvågorna du hör</summary>
+    <summary lang="ta_IN">projectM நீங்கள் கேட்கும் ஒலி அலைகளின் வடிவங்களின் மூலம் பறக்க செய்யும்</summary>
+    <summary lang="tg_TJ">projectM бо мавҷҳои садояш фораму роҳатбахш аст</summary>
+    <summary lang="th_TH">projectM นำคุณโบยบิน ผ่านคลื่นเสียงที่คุณกำลังรับฟัง</summary>
+    <summary lang="tr_TR">projectM sizi duyduğunuz ses dalgaları üzerinde bir uçuşa çıkartır</summary>
+    <summary lang="uk_UA">projectM забирає вас в політ крізь хвилі музики яку ви слухаєте</summary>
+    <summary lang="vi_VN">projectM giúp bạn bay bổng trong âm thanh bạn đang nghe</summary>
+    <summary lang="zh_CN">projectM 带你与声波一起飞翔</summary>
+    <summary lang="zh_TW">projectM帶著您一起翱翔並飛越聆聽中的音樂浪潮</summary>
+    <description lang="af_ZA">projectM is 'n ontsagwekkende musiek visualiseerder. Daar is niks beter in die wêreld van Unix nie. projectM se grootheid kom van die harde werk van die gemeenskap. Gebruikers soos jy kan voorafinstellings skep wat musiek met ongelooflike visualiserings konnekteer. Probeer dit!
+projectM Visualisering is 'n geLGPL'de herimplementasie van Milkdrop onder OpenGL
+Al wat projectM benodig is 'n video kaart met 3D versnelling en jou gunsteling musiek.</description>
+    <description lang="ar_SA">مشروع M هو مصورللموسقى رائع. لا شي في العالم أفضل من Unix. عظمة مشروع M تأتي من عمل المجتمع الجاد. يستطيع مستخدمون مثلك إنشاء مسبقات تتصل بالموسقى لصور رائعة. جربه
+تصوير مشروع M 
+كل ما يتطلبه مشروع M هو كرت شاشة بتسارع 3D و موسيقاك المفضلة.</description>
+    <description lang="be_BY">projectM is an awesome music visualizer. There is nothing better in the world of Unix. projectM's greatness comes from the hard work of the community. Users like you can create presets that connect music with incredible visuals. Try it!
+projectM Visualization is an LGPL'ed reimplementation of Milkdrop under OpenGL
+All projectM requires is a video card with 3D acceleration and your favorite music.</description>
+    <description lang="bg_BG">"projectM" е страхотна визуализация, плод на упорит труд от страна на общността. В света на Unix не съществува нищо по-добро. Потребители, като Вас, създават предварително комбинации от настройки, които се ползват като модел за визуализацията и така свързват звука с невероятни визуални ефекти. Пробвайте!
+Визуализацията "projectM" е преработка на Milkdrop под лиценза LGPL, основана на OpenGL.
+"projectM" изисква видео карта с 3D ускорение и любимата Ви музика.</description>
+    <description lang="ca_ES">El projectM és un visualitzador de música impressionant. No hi ha res millor al món Unix. La grandesa de projectM prové del dur treball de la comunitat. Els usuaris com tu poden crear predefinits que connecten la música amb visualitzacions increibles. Prova-ho!
+La Visualització projectM és una re-implementació en LGPL de Milkdrop baix OpenGL
+Tot el que projectM requereix és una tarja amb acceleració 3D i la teva música preferida.</description>
+    <description lang="cs_CZ">projectM je úžasný hudební vizualizér. Ve světě Unixu neexistuje nic lepšího. Velikost projectuM pochází z tvrdé práce komunity. Uživatelé, jako jste vy, mohou vytvářet předvolby, které spojují hudbu s fantastickými vizuálními zážitky. Zkuste jej!
+projectM vizualizace je LGPL reimplementace Milkdropu pod OpenGL.
+Vše co projectM vyžaduje je grafická karta s 3D akcelerací a vaši oblíbenou hudbu.</description>
+    <description lang="cy_GB">Mae delweddwr cerddoriaeth ryfeddol. Does dim byd gwell ym myd Unix. Mae mawredd projectM yn dod o waith caled y gymuned. Mae defnyddwyr fel chi yn gallu creu rhagosodiadau sy'n cysylltu delweddau anhygoel gyda cherddoriaeth. Defnyddiwch e.
+Mae projectM yn ailgyflwyniad LGPL o Milkdrop o dan OpenGL.
+Yr unig beth sydd ei angen ar projectM yw cerdyn video gyda chyflymu 3D a'ch hoff gerddoriaeth.</description>
+    <description lang="da_DK">projectM er en fantastisk musikvisualisering. Der findes intet bedre i Unix-verdenen. projectMs storhed kommer fra brugerbasens hårde arbejde. Brugere, som dig selv, kan skabe forudindstillinger, som forbinder musik med utrolige visualiseringer. Prøv det!
+projectM Visualization er en LGPLed reimplementering af Milkdrop under OpenGL.
+Alt hvad projectM kræver er et grafikkort med 3D-acceleration og din yndlingsmusik.</description>
+    <description lang="de_DE">projectM ist eine unglaubliche Musik-Visualisierung. In der Unix-Welt gibt es nichts Besseres. Die Einzigartigkeit ist Ergebnis der harten Arbeit der Community. Jeder Anwender kann "Presets" schreiben, welche Musik mit unglaublichen visuellen effekten verbinden. 
+projectM ist die LGPL Reimplementierung von Milkdrop mit OpenGL
+Alles was projectM benötigt, ist eine Grafikkarte mit 3D-Beschleunigung und coole Musik.</description>
+    <description lang="el_GR">Το projectM είναι ένας φοβερός μουσικός οπτικοποιητής. Δεν υπάρχει τίποτα καλύτερο στον κόσμο του Unix. Το μεγαλείο του projectM πηγάζει από τη σκληρή δουλειά της κοινότητας. Χρήστες όπως εσείς μπορούν να δημιουργήσουν προρυθμίσεις συνδέοντας τη μουσική με απίστευτες απεικονίσεις. Δοκιμάστε το!
+Η Οπτικοποίηση projectM αποτελεί μία νέα LGPL υλοποίηση του Milkdrop υπό το OpenGL
+Το μόνο που απαιτείται από το projectM είναι μία κάρτα γραφικών με τρισδιάστατη (3D) επιτάχυνση, και την αγαπημένη σας μουσική.</description>
+    <description lang="en_AU">projectM is an awesome music visualiser. There is nothing better in the world of Unix. projectM's greatness comes from the hard work of the community. Users like you can create presets that connect music with incredible visuals. Try it!
+projectM Visualisation is an LGPL'ed reimplementation of Milkdrop under OpenGL
+All projectM requires is a video card with 3D acceleration and your favourite music.</description>
+    <description lang="en_GB">projectM is an awesome music visualiser. There is nothing better in the world of Unix. projectM's greatness comes from the hard work of the community. Users like you can create presets that connect music with incredible visuals. Try it!
+projectM Visualisation is an LGPL'ed reimplementation of Milkdrop under OpenGL
+All projectM requires is a video card with 3D acceleration and your favourite music.</description>
+    <description lang="en_NZ">projectM is an awesome music visualiser. There is nothing better in the world of Unix. projectM's greatness comes from the hard work of the community. Users like you can create presets that connect music with incredible visuals. Try it!
+projectM Visualisation is an LGPL'ed reimplementation of Milkdrop under OpenGL
+All projectM requires is a video card with 3D acceleration and your favourite music.</description>
+    <description lang="en_US">projectM is an awesome music visualizer. There is nothing better in the world of Unix. projectM's greatness comes from the hard work of the community. Users like you can create presets that connect music with incredible visuals. Try it!
+projectM Visualization is an LGPL'ed reimplementation of Milkdrop under OpenGL
+All projectM requires is a video card with 3D acceleration and your favorite music.</description>
+    <description lang="es_AR">projectM es un fantástico visualizador de música. No hay nada mejor en el universo Unix. La grandeza de projectM proviene del duro trabajo de la comunidad. Usuarios como tu pueden crear ajustes preestablecidos que conecten la música con visualizaciones increíbles. ¡Pruebalo!
+projectM Visualization es una reimplantación de Milkdrop bajo licencia LGPL y renderizado en OpenGL.
+Todo lo que projectM necesita es una tarjeta de video con aceleración 3D y tu música favorita.</description>
+    <description lang="es_ES">projectM es un fantástico visualizador de música. No hay nada mejor en el universo Unix. La grandeza de projectM proviene del duro trabajo de la comunidad. Usuarios como usted pueden crear ajustes preestablecidos que conecten la música con visualizaciones increibles. ¡Pruébelo!
+projectM Visualization es una reimplantación de Milkdrop bajo licencia LGPL y renderizado en OpenGL.
+Todo lo que projectM necesita es una tarjeta de vídeo con aceleración 3D y su música favorita.</description>
+    <description lang="es_MX">projectM es un visualizador de música sorprendente. No hay nada mejor en el mundo de Unix. La grandeza de projectM proviene del duro trabajo de la comunidad. Usuarios como tú pueden crear preaujstes que conectan la música con increíbles imágenes. Inténtalo!
+La visualización projectM es una reimplementación en LGPL de Milkdrop bajo OpenGL.
+Todo lo que projectM necesita es una tarjeta de video con aceleración 3D y tu música favorita.</description>
+    <description lang="et_EE">projectM on äge muusika visuaal. Unixi maailmas pole midagi paremat. projectM'i suurus on saavutatud kogukonna ühise raske töö tulemusena. Kasutajad nagu sina saavad luua eelseadeid, mis ühendavad muusika imeliste visualidega. Proovi seda! projectM visualiseerimine on litsentseeritud (LGPL) uuskasutus Milkdrop'ist OpenGL keskkonnas.
+Ainus mida projectM vajab, on 3D kiirendusega videokaart ja sinu lemmikmuusika.</description>
+    <description lang="fi_FI">projectM on uskomaton musiikkivisualisointi, joka on yhteisön kovan työn tulos. Käyttäjät voivat luoda esiasetuksia, jotka yhdistävät musiikin kuviin.
+projectM -visualisointi on LGPL-lisensoitu Milkdropin uudelleenimplementointi OpenGL:llä.
+projectM tarvitsee vain 3D-kiihdyttävän näytönohjaimen ja lempimusiikkisi.</description>
+    <description lang="fr_CA">projectM est un fantastique visualiseur musical. Il n'y a rien de mieux dans l'univers Unix. L'ampleur de projectM vient du travail énorme de la communauté. Des utilisateurs comme vous peuvent créer des préréglages qui connecteront la musique avec des visuels incroyables. Essayez-le!
+La visualisation projectM est une réalisation sous LGPL de Milkdrop en OpenGL.
+Le seul pré-requis pour projectM est une carte graphique avec accélération 3D et votre musique favorite.</description>
+    <description lang="fr_FR">projectM est un fantastique visualiseur musical. Il n'y a rien de mieux dans l'univers Unix. L'ampleur de projectM vient du travail énorme de la communauté. Des utilisateurs comme vous peuvent créer des préréglages qui connecteront la musique avec des visuels incroyables. Essayez-le!
+La visualisation projectM est une réalisation sous LGPL de Milkdrop en OpenGL.
+Le seul pré-requis pour projectM est une carte graphique avec accélération 3D et votre musique favorite.</description>
+    <description lang="gl_ES">projectM é unha impresionante Visualización de música. Non hai nada mellor no mundo Unix. A grandeza de projectM ven da dura xeira da comunidade. Usuarios coma vostede poden crear preconfiguracións que conectan a música con incribles visualizacións. Próbeo!
+A Visualización projectM é unha reimplementación de Milkdrop empregando OpenGL e con licencia LGPL.
+Todo o que precisa projectM é unha tarxeta gráfica con aceleración 3D e a súa música favorita.</description>
+    <description lang="he_IL">projectM is an awesome music visualizer. There is nothing better in the world of Unix. projectM's greatness comes from the hard work of the community. Users like you can create presets that connect music with incredible visuals. Try it!
+projectM Visualization is an LGPL'ed reimplementation of Milkdrop under OpenGL
+All projectM requires is a video card with 3D acceleration and your favorite music.</description>
+    <description lang="hr_HR">projectM je fenomenalan glazbeni vizualizator. Ne postoji ništa bolje u svijetu Unixa. Veličina projectM-a dolazi zbog predanosti njegove zajednice. Korisnici kao što ste Vi, mogu stvoriti predloške koje povezuju glazbu i nevjerojatne vizualizacije. Isprobajte!
+projectM Vizualizacija je LGPL reimplementacija Milkdropa pod OpenGL-om
+Sve što projectM zahtijeva je video kartica sa 3d ubrzanjem i vašu omiljenu glazbu.</description>
+    <description lang="hu_HU">A projectM egy fantasztikus zenei vizualizáció. Nincs ennél jobb a Unix világban. A projectM különlegessége, hogy egy egész fejlesztői közösség nehéz munkájából jött létre. A felhasználók, mint te egyedi beállításokat hozhatnak létre ami összekapcsolja a zenét a hihetetlen látványelemekkel. Próbáld ki!
+A projectM Vizualizáció a Milkdrop újrakódolása LGPL licenc alatt, OpenGL videókártya támogatást használva.
+Minden projectM látványbeállításhoz 3D gyorsításra képes videókártya és a kedvenc zenéd szükséges.</description>
+    <description lang="id_ID">projectM merupakan visualiser musik yang keren. Tak ada yng lebih baik di dunia Unix. Kebesaran projectM berasa dari kerja keras dari komunitas. Pengguna seperti anda dapat membuat preset yang menghubungkan musik dengan visual yang luarbiasa. Cobalah!!!
+Visualisasi projectM merupakan produk berlisensi LGPL reimplementasi dari Milkdrop dibawah OpenGL
+Semua projectM membutuhkan kartu grafis dengan akselerasi 3D dan musik favorit anda.</description>
+    <description lang="is_IS">projectM er frábær myndskreyting. það er ekkert betra í Unix heiminum. Gæði projectM koma til vegna framlags samfélagsins.Notendur eins og þú geta búið til forstillingar sem tengja tónlist við ótrúlega myndræna upplifun. Prófaðu!
+projectM myndskreyting er LGPL útgáfa af Milkdrop með OpenGL
+Allt sem projectM þarfnast er skjákort með þrívíddar hraðli 3D og uppáhalds tónlistin þín.</description>
+    <description lang="it_IT">projectM è un incredibile visualizzazione musicale. E' il meglio del mondo Unix. La grandezza di projectM proviene dal duro lavoro della comunità. Gli utenti come te possono creare preset che connetto la musica con incredibili grafiche. Provalo!
+projectM è una reimplementazione LGPL di Milkdrop sotto OpenGL
+Tutti i projectM richiedono una scheda video con accelerazione 3D e la tua musica preferita.</description>
+    <description lang="ja_JP">projectM is an awesome music visualizer. There is nothing better in the world of Unix. projectM's greatness comes from the hard work of the community. Users like you can create presets that connect music with incredible visuals. Try it!
+projectM Visualization is an LGPL'ed reimplementation of Milkdrop under OpenGL
+All projectM requires is a video card with 3D acceleration and your favorite music.</description>
+    <description lang="ko_KR">projectM은 멋진 음악 시각화입니다. Unix에는 이것보다 좋은것은 없습니다. projectM은 많은 사람들에 의해 개발되었습니다. 여러분과 같은 유저들이 음악을 표현하는 프리셋을 만들었습니다. projectM 음악시각화는 OpenGL에서 작동하도록 Milkdrop를 새로 만든것입니다. 모든 projectM은 3D 가속이 되는 비디오카드와 음악이 필요합니다.</description>
+    <description lang="lt_LT">ProjectM yra išskirtinė muzikos vizualizacija. Nėra nieko geriau, Unix pasaulyje. ProjectM spindesys tai sunkus darbas bendruomenėje. Naudotojai, tokie kaip Jūs galite sukurti ir suderinti muziką su puikiais vizualizacijos efektais. Sužinokite!
+ProjectM yra įgyvendinimas iš Milkdrop pagal LGPL licenciją, ir naudoja OpenGL
+Viskas ko reikia projectM tai vaizdo plokštės su 3D akceleracija (greitėjimu) ir geros muzikos.</description>
+    <description lang="lv_LV">projectM ir brīnišķīgs mūzikas vizualizētājs. Nav nekā labāka Unix pasaulē. projectM's izcilība rodas no smagā darba komūnā. Lietotāji, kas ir tādi paši kā Jūs, var radīt sagataves, kas savieno mūziku ar neticami skaistām vizualizācijām. Pamēģiniet!
+projectM Vizualizācija ir Milkdrop LGPL reimplementācija zem OpenGL
+Visi projectM pieprasa video karti ar 3D paātrinājumu un Jūsu mīļākās mūzikas izlasi.</description>
+    <description lang="mk_MK">projectM is an awesome music visualizer. There is nothing better in the world of Unix. projectM's greatness comes from the hard work of the community. Users like you can create presets that connect music with incredible visuals. Try it!⏎ projectM Visualization is an LGPL'ed reimplementation of Milkdrop under OpenGL⏎ All projectM requires is a video card with 3D acceleration and your favorite music.</description>
+    <description lang="nb_NO">projectM er en awesome musikk visualisering. Der er ingenting bedre i Unix verden. projectM er så flott takket være et hardt arbeidende felleskap. Brukere som deg kan lage forhåndsinnstillinger som kobler musikk med utrolige visualiseringer. Prøv det!
+projectM visualiseringen er en LGPL reinplimentasjon av Milkdrop under OpenGL
+Alt projectM trenger er et grafikkort med 3D støtte og din favoritt musikk</description>
+    <description lang="nl_NL">ProjectM is een geweldige muziekvisualisatie. Er bestaat niets beters in de UNIX-wereld. Het success van ProjectM is het resultaat van het harde werk van de XBMC-gemeenschap. U kunt hun eigen presets instellen die muziek linken aan verbluffende visualisaties. Probeer het uit!
+ProjectM-visualisatie is beschikbaar onder de LGPL-licentie en is een herimplementatie van Milkdrop (OpenGL). Alles wat projectM vereist is een videokaart met 3D-versnelling en jouw favoriete muziek.</description>
+    <description lang="pl_PL">projectM to rewelacyjna wizualizacją muzyki. Nie ma nic lepszego w świecie Unixa. Wspaniałość projectM wywodzi się ciężkiej pracy społeczności. Użytkownicy tacy jak Ty, mogą tworzyć efekty łączące muzykę z niesamowitymi efektami wizualnymi. Przekonaj się!
+projectM jest reimplementacją Milkdropa na licencji LGPL i używa OpenGL
+Wszystko czego wymaga projectM, to karta graficzna wspierająca akcelerację 3D oraz zasoby Twojej muzyki.</description>
+    <description lang="pt_BR">O projectM é um fantástico visualizador de música. Não existe nenhum melhor no mundo Unix. A grandeza do projectM advém do trabalho árduo da comunidade. Utilizadores como você podem criar pré-definições que ligam a música a visualizações incríveis. Experimente!
+O visualizador projectM é uma reimplementação do Milkdrop OpenGL sob uma licença LGPL. Tudo o que o projectM necessita é de uma placa gráfica com aceleração 3D e a sua música favorita.</description>
+    <description lang="pt_PT">O projectM é uma fantástica visualização de música. Não há melhor no mundo Unix. A grandeza do projectM advém do trabalho árduo da comunidade. Qualquer utilizador pode criar pré-selecções que combinam a música com visualizações incríveis. Experimente!
+O visualizador projectM é uma reimplementação do Milkdrop OpenGL sob uma licença LGPL. Tudo o que o projectM precisa é de uma placa gráfica com aceleração 3D e a sua música favorita.</description>
+    <description lang="ro_RO">projectM este un plugin uimitor. Nu există nimic mai bun în lumea Unix. Măreția projectM vine din munca întregii comunități. Utilizatori ca și tine pot crea presetări care conectează muzica cu vizualizări incredibile. Încearcă și tu!
+Vizualizarea projectM este o reimplementare LGPL a lui Milkdrop sub OpenGL.
+Tot ceea ce necesită projectM este o placă video cu accelerare 3D și muzica ta favorită.</description>
+    <description lang="ru_RU">projectM удивительным образом визуализирует музыку. В мире Unix нет ничего лучше. projectM является результатом напряжённой работы сообщества. Пользователи могут создавать наборы настроек, которые объединяют музыку и невероятные визуальные эффекты. Попробуйте сами!⏎
+Визуализация projectM представляет собой LGPL-реализацию Milkdrop на основе OpenGL⏎
+Всё, что требуется для визуализации — это видеокарта с 3D-ускорением и любимая музыка.</description>
+    <description lang="sk_SK">projektM je úžasný hudobný vizualizér. Vo svete Unixu neexistuje nič lepšie. Veľkosť projectM pramení z tvrdej práce komunity. Užívatelia ako ty vytvárajú Predvoľby, ktoré spájajú hudbu s fantastickými vizualizáciami. Vyskúšaj to![CR] projectM vizualizácie sú LGPL implementáciou vizualizácií Milkdrop s použitím OpenGL.[CR] Jediné čo projectM potrebuje je grafickú kartu s 3D akceleráciou a Vašu obľúbenú hudbu.</description>
+    <description lang="sl_SI">projectM je glasbeni vizualizator. Nič ni boljšega v svetu Unixa. Veličina ProjectM izhaja iz garanja skupnosti. Uporabniki, kot vi, si lahko ustvarite prednastavitve, ki povezujejo glasbo z neverjetno vizualizacijo. Poskusite!
+Vizualizacija projectM je reimplementacija Milkdropa v LGPL v okviru OpenGL-a.
+projectM potrebuje le grafično kartico s 3D pospeševanjem in vašo najljubšo glasbo.</description>
+    <description lang="sq_AL">projectM është nje vizualizim i tmerrshëm. Nuk ekziston asgjë më të mirë në boten e Unix'it. Madhësija e projectM'it vjen nga puna e shkëlqyeshme të bashkimit të saj. Përdoruesit si ti mundin të krijojnë cilësime që lidhin musikën me vizualizime të jashtzakonshëm. Provoje!
+projectM'i është një zbatim i LGPL'uar prej Milkdrop ndër OpenGL.
+Të gjith që projectM kërkon është një kartë grafike me përshpejtim për 3D dhe muzikën tënde të preferuar.</description>
+    <description lang="sv_SE">projectM är en fantastisk musikvisualisering. Det finns inget bättre i Unixvärlden. projectM's storhet kommer från gemenskapens hårda jobb. Användare som du kan skapa förval som förenar musiken med otroliga visualiseringar. Prova det!
+projectM visualisering är en LGPL-implementation av Milkdrop i OpenGL
+Alla projectM kräver ett grafikkort med 3D-acceleration och din favoritmusik.</description>
+    <description lang="ta_IN">projectM ஒரு அற்புதமான இசை விசுவலைஸர் ஆகும். யூனிக்ஸ் உலகில் இதைவிட சிறந்தது இல்லை. projectM உடைய சிறப்புத்தன்மை கடினமான சமூகத்தின் உழைப்பில் இருந்து வருகிறது. உங்களை போன்ற பயனர்களாலும் நம்பமுடியாத இசை முன்னமைவுகளை உருவாக்க முடியும். முயற்சித்துபாரும்!⏎ projectM காட்சியாக்கம் OpenGL கீழ் Milkdrop உடைய மறு தயாரிப்பாக உள்ளது⏎ projectM க்கு தேவைப்படுவதெல்லாம் ஒரு 3D முடுக்கம் அட்டை மற்றும் உங்களுக்கு பிடித்த இசை.</description>
+    <description lang="tg_TJ">projectM таҷассуми мусиқии аҷоиб мебошад. Чезе беҳтар аз projectM дар ҷаҳони Unix вуҷуд надорад. projectM натиҷаи кори вазнини ҷамъияташ мебошад. Корбарони монанди шумо метавонанд танзимотеро, ки мусиқиро бо таҷассуми аҷоиб пайваст мекунед, эҷод кунанд. Кӯшиш кунед!
+Таҷассуми projectM дар асоси LGPL-и Milkdrop бо OpenGL эҷод карда шуд
+Таҷассуми projectM танҳо корти видеоӣ бо шитобдиҳандаи 3D ва файлҳои мусиқии дӯстдоштаи шуморо талаб мекунад.</description>
+    <description lang="th_TH">projectM คือการแสดงแสงสีประกอบเพลง อันยอดเยี่ยม. ไม่มีอะไรที่ดีกว่านี้แล้ว ในโลกของ Unix. projectM คือความยิ่งใหญ่ ที่มาจากการทำงานอย่างหนักของชุมชน. ผู้ใช้เช่นคุณสามารถสร้าง ชุดรูปแบบ ที่เชื่อมโยงกับเพลงด้วยแสงสีอันน่าทึ่ง. ลองเลย!
+การแสดงแสงสี projectM เป็นการดำเนินการตาม LGPL'ed ของ Milkdrop ภายใต้ OpenGL
+ทั้งหมดที่ต้องใช้สำหรับ projectM มีเพียงการ์ดวิดีโอที่มีการเร่งแสดงผล 3D และเพลงที่คุณชื่นชอบ.</description>
+    <description lang="tr_TR">projectM muhteşem bir müzik görselleştiricidir. Unix dünyasında daha iyisi yoktur. projectM'in ihtişamı geliştirici gurubunun çok çalışmasından gelir. Sizin gibi kullanıcılar müzik ile bağlanan inanılmaz görsel ayarlar hazırlayabilirler. Lütfen siz de deneyin!
+projectM Görseli, Milkdrop'un OpenGL altında yeniden LGPL'li implementasyonudur.
+projectM' in tek ihtiyacı 3D hızlandırıcılı bir görüntü kartı ve sizin favori müziğinizdir.</description>
+    <description lang="uk_UA">projectM - це чудовий візуалізатор відео. Немає нічого кращого в світі Unix. projectM створений тяжкою роботою спільноти. Користувачі, такі як Ви, можуть створювати різні візуалізації. Спробуйте!
+Візуалізація projectM - це LGPLівська імплементація Milkdrop під ліцензією OpenGL
+Все, що потрібно для projectM - це відео карта з 3D прискоренням і Ваша улюблена музика.</description>
+    <description lang="vi_VN">projectM là chương trình trình chiếu nhạc tuyệt vời. Không có gì tuyệt hơn nó trong thế giới Unix. Sự tuyệt vời của projectM đến từ thành quả vất vả của cộng đồng. Những người sử dụng như bạn có thể tạo ra những bộ preset mà kết nối âm nhạc với hiệu ứng hình ảnh tuyệt vời. Hãy thử nó!
+Chương trình này là một phiên bản LGPL được phát triển dựa trên Milkdrop qua OpenGL
+Tất cả bạn cần chỉ là một card đồ họa 3D và bài hát ưa thích của mình.</description>
+    <description lang="zh_CN">projectM 是一个音乐可视化效果。它是 Unix 世界中最好的。它的伟大来自于社区的辛苦工作。使用者可以创建预设参数把音乐和难以置信的可视化效果连接起来。试试吧！
+projectM 可视化效果是用 OpenGL 按照 LGPL 协议对 Milkdrop 的重新实现
+projectM 所要求的仅是一块有 3D 加速功能的显卡和你喜爱的音乐。</description>
+    <description lang="zh_TW">projectM是一個令人驚豔的音樂視覺效果。它是Unix世界中最好的。projectM的偉大成果來自於社群創作者的投入與心血。使用者可以創建把音樂和難以置信的視覺效果連接起來的預設值。快來嘗鮮一下吧！
+projectM視覺效果是用OpenGL按照LGPL協議對Milkdrop的重新實現
+projectM所要求的僅是一張有3D加速功能的影像顯示卡和您喜愛的音樂。</description>
+  </extension>
+</addon><addon id="xbmc.repo.ivueguide" name="iVue2 TV Guide Repo" version="0.0.2" provider-name="iVue">
+	<extension point="xbmc.addon.repository" name="iVue2 TV Guide Add-ons Repository">
+		<dir>
+		    <info compressed="false">https://raw.githubusercontent.com/totaltec2014/ivue2/master/addons.xml</info>
+		    <checksum>https://raw.githubusercontent.com/totaltec2014/ivue2/master/addons.xml.md5</checksum>
+		    <datadir zip="true">https://raw.githubusercontent.com/totaltec2014/ivue2/master/</datadir>
+		</dir>
+	</extension>
+	<extension point="xbmc.addon.metadata">
+		<summary>Install iVue2 TV Guide </summary>
+		<description>Download and install for iVue2 Tv guide addons </description>
+		<disclaimer> Repo for iVue2 Tv guide addon </disclaimer>
+		<platform>all</platform>
 		<assets>
             <icon>icon.png</icon>
             <fanart>fanart.jpg</fanart>
-            <screenshot>resources/images/screenshot-01.jpg</screenshot>
-            <screenshot>resources/images/screenshot-02.jpg</screenshot>
-            <screenshot>resources/images/screenshot-03.jpg</screenshot>
         </assets>
 	</extension>
-</addon><addon id="script.module.slyguy" name="SlyGuy Common" provider-name="SlyGuy" version="0.85.54">
-  <requires>
-    <import addon="slyguy.dependencies" version="0.0.20" />
-    <import addon="repository.slyguy" version="0.0.9" />
-  </requires>
-  <extension point="xbmc.python.pluginsource" library="default.py">
-    <provides>executable</provides>
-  </extension>
-  <extension point="xbmc.service" library="service.py" start="login" />
-  <extension point="kodi.context.item">
-    <menu id="kodi.core.main">
-      <item library="default.py">
-        <label>$LOCALIZE[20410]</label>
-        <visible>!String.IsEmpty(ListItem.Trailer) + ![String.StartsWith(Container.FolderPath,plugin://) + String.Contains(Container.FolderPath,trailer)] + Integer.IsEqual(Window(10000).Property(_slyguy_trailer_context_menu),1)</visible>
-      </item>
-    </menu>
-  </extension>
-  <extension point="xbmc.python.module" library="resources/modules" />
-  <extension point="xbmc.addon.metadata">
-    <description lang="en">Common code, proxy and settings required by all Slyguy add-ons</description>
-    <reuselanguageinvoker>true</reuselanguageinvoker>
-    <license />
-    <language />
-    <website />
-    <news>Move userdata and bookmarks into settings!</news>
-    <assets>
-      <icon>icon.png</icon>
-      <fanart>fanart.jpg</fanart>
-    </assets>
-  </extension>
 </addon></addons>
