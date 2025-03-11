@@ -336,13 +336,13 @@
 			<screenshot>resources/art/ss/3.png</screenshot>
 		</assets>
 	</extension>
-</addon><addon id="visualization.projectm" version="20.2.1" name="projectM" provider-name="Team Kodi">
+</addon><addon id="visualization.projectm" version="20.2.2" name="projectM" provider-name="Team Kodi">
   <requires>
 <import addon="kodi.binary.global.main" minversion="2.0.0" version="2.0.2" />
 <import addon="kodi.binary.instance.visualization" minversion="4.0.0" version="4.0.0" /></requires>
   <extension point="xbmc.player.musicviz" library_android="libvisualization.projectm.so" />
   <extension point="xbmc.addon.metadata">
-    <platform>android-armv7</platform>
+    <platform>all</platform>
     <license>GPL-2.0-or-later</license>
     <source>https://github.com/xbmc/visualization.projectm</source>
     <assets>

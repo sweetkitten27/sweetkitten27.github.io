@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <addon
   id="visualization.projectm"
-  version="20.2.1"
+  version="20.2.2"
   name="projectM"
   provider-name="Team Kodi">
   <requires>
@@ -11,7 +11,7 @@
     point="xbmc.player.musicviz"
     library_android="libvisualization.projectm.so"/>
   <extension point="xbmc.addon.metadata">
-    <platform>android-armv7</platform>
+    <platform>all</platform>
     <license>GPL-2.0-or-later</license>
     <source>https://github.com/xbmc/visualization.projectm</source>
     <assets>
