@@ -378,7 +378,7 @@
             <fanart>fanart.jpg</fanart>
         </assets>
     </extension>
-</addon><addon id="visualization.projectm" version="21.0.3" name="projectM" provider-name="Team Kodi">
+</addon><addon id="visualization.projectm" version="21.0.4" name="projectM" provider-name="Team Kodi">
   <requires>
 <import addon="kodi.binary.global.main" minversion="2.0.0" version="2.0.2" />
 <import addon="kodi.binary.instance.visualization" minversion="4.0.0" version="4.0.0" /></requires>
